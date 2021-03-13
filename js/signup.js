@@ -1,5 +1,6 @@
 $(document).ready(function() {
     
+    var form = $(".signup-form");
     var userName = $("#userName");
     var password = $("#password");
     var confirmPassword = $("#confirmPassword");
@@ -17,25 +18,20 @@ $(document).ready(function() {
             }
         })
     });
-    // when attempting submit makes sure data is valid then sends async request to php to attempt to sign user up
+
     submit.on('click', function(e){
+      
         e.preventDefault();
         if(valid()){
+        
             $.ajax({
                 type: "post",
-                url:  "../php/signUp.php",
+                url:  "../php/signup.php",
                 data: {userName: userName.val(), password: password.val(), fName: fName.val(), lName: lName.val(), email: email.val()}
             }).done(function(data){
-                if(data == "success"){
-                    // submit form which will redirect to index.htmls
-                    // will only work on local machine
-                    window.location.replace("http://localhost/Group32ProjectCosc360/index.html");
-                  }
-                //returns message if not sucessful
                 $("#message").html(data);
-            }).fail(function(jqXHR) {
-                // if ajax request fails, display error
-                console.log("Error: " + jqXHR.status);});
+            }).fail(function(jqXHR) {console.log("Error: " + jqXHR.status);});
+
         }
     });
 
