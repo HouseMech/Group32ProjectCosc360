@@ -206,3 +206,7 @@ a:hover {
 #forgetP:visited {
   color: rgb(84, 26, 16);
 }
+
+.error{
+  background-color: red
+}
