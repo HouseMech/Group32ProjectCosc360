@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>MyBlogPost</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
@@ -18,17 +18,9 @@
       <tr>
         <td>
           <div id="menu">
-            <a id="active-item" href="index.html"><em>Home</em></a>
-            <!-- Display (Sign In / Profile / Sign Out) buttons depending on user login status. -->
-            <script>
-              $.ajax({
-               url: 'php/index.php',
-                 success: function (response) { 
-                   var button = $(response); 
-                   $('#menu').append(button);
-                 }
-              });
-            </script>
+            <a id="menuItem" href="../index.html"><em>Home</em></a>
+            <a id="active-item" href="./profile.html">Profile</a>
+            <a id="menuItem" href="../php/signOut.php">Sign Out</a>
           </div>
         </td>
       </tr>

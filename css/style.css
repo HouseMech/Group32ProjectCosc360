@@ -62,6 +62,19 @@ active {
   transition-timing-function: linear;
 }
 
+#active-item {
+  background-color: rgb(9, 9, 65);
+  border-radius: 10%;
+  margin: 0.5em;
+  border: solid 1pt black;
+  box-shadow: 4px 4px black;
+  font-size: 2em;
+  text-align: center;
+  padding: 0.5em;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+
 #menu {
   margin: auto;
 }
@@ -160,6 +173,59 @@ a:hover {
   transition-timing-function: ease;
 }
 
+#sidebar-topdiv {
+  margin: 1em;
+  margin-bottom: 2em;
+}
+
+#userProfilePicture {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin-bottom: 2em;
+}
+
+#sidebar-username {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-family: Quicksand;
+  font-size: 1em;
+  transition-timing-function: ease-in;
+  transition-duration: 1s;
+}
+
+#sidebar-btn {
+  background-color: rgb(235, 235, 235);
+  margin: 1em 1em 1em 1em;
+  font-size: 1em;
+  text-align: center;
+  border-radius: 10%;
+  color: black;
+  font-weight: bold;
+  padding: 1em;
+  border: solid 2pt black;
+  cursor: pointer;
+  font-weight: bold;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+}
+
+#sidebar-btn:hover {
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  background-color: #c2675f;
+  color: white;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+
+#sidebar-btn:focus {
+  outline: none;
+  font-weight: bold;
+  font-family: Quicksand;
+}
+
 /* Sign In Page Styling */
 
 .signup-container {
@@ -207,6 +273,6 @@ a:hover {
   color: rgb(84, 26, 16);
 }
 
-.error{
-  background-color: red
+.error {
+  background-color: red;
 }
