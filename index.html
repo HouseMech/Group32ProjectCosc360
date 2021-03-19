@@ -18,8 +18,17 @@
         <td>
           <div id="menu">
             <a id="menuItem" href="index.html"><em>Home</em></a>
-            <a id="menuItem" class="inactive" href="#">Profile</a>
-            <a id="menuItem" href="pages/signIn.html">Sign In</a>
+            <!-- Display (Sign In / Profile / Sign Out) buttons depending on user login status. -->
+            <script>
+              $.ajax({
+               url: 'php/index.php',
+                 success: function (response) { 
+                   var button = $(response); 
+                   $('#menu').append(button);
+                 }
+              });
+            </script>
+
           </div>
         </td>
       </tr>
