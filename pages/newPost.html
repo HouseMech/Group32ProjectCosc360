@@ -34,7 +34,7 @@
       <p id="sidebar-username">Username</p>
     </div>
     <div id="sidebar-bottomdiv">
-      <div id="sidebar-btn" onclick="location.href='newPost.html'">New Post</div>
+      <div id="active-btn" onclick="location.href='newPost.html'">New Post</div>
       <div id="sidebar-btn" onclick="location.href='viewPosts.html'">View Posts</div>
       <div id="sidebar-btn" onclick="location.href='viewComments.html'">View Comments</div>
       <div id="sidebar-btn" onclick="location.href='accountSettings.html'">Account Settings</div>
@@ -42,6 +42,32 @@
   </div>
 
   <div id="center">
+    <form method="POST" action="../php/newPost.php" id="newPost-form">
+      <fieldset>
+        <label for="pTitle">Post Title:*</label>
+        <br/>
+        <input name="pTitle" id="pTitle" type="text" required/>
+        <br/>
+        <label for="pDesc">Post Description:*</label>
+        <br/>
+        <textarea id="pDesc" name="pDesc" rows="4" cols="50" required></textarea>
+        <br/>
+        <label for="pTags">Post Tags <i>(seperated by commas <b>","</b>)</i>:</label>
+        <br/>
+        <input name="pTags" id="pTags" type="text" />
+        <br/>
+        <label for="pImg">Upload Image:</label>
+        <br/>
+        <input type="file" id="pImg" name="pImg" accept="image/*">
+        <br/>
+        <p id="commentText">
+        <input type="checkbox" id="pComments" name="pComments" value="1" checked/>
+        Allow Comments  
+        </p>
+        <br/>
+        <input type="submit" value="POST" name="pSubmit" id="pSubmit"/>
+      </fieldset>
+    </form>
   </div>
 
   <footer id="mastfoot">
