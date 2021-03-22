@@ -1,4 +1,10 @@
 <?php
+  session_start();
+  $user = 'root';
+  $pass = '';
+  $dbname = 'blog';
+
+  // Get form info. 
   $title = $_POST['pTitle']; // required
   $desc = $_POST['pDesc']; // required
   $tags = $_POST['pTags']; // optional
@@ -20,4 +26,5 @@
   echo 'Post Tags: <b>' . $tags . '</b><br>';
   echo 'Post Image: <b>' . $image . '</b><br>';
   echo 'Post Commenting: <b>' . $allowComments . '</b><br>';
+  echo $_SESSION["email"];
 ?>

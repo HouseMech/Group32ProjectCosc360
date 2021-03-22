@@ -16,7 +16,6 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true){
     exit("You are already logged in!");
 }
 
-
 // get info from post
 $userName = $_POST["userName"];
 $fName = $_POST["fName"];

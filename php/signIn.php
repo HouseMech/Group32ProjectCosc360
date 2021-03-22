@@ -34,6 +34,7 @@ if(is_null($row)){
     if(password_verify($password, $row["password"])){
         // sets session variable to know user is logged in
         $_SESSION["login"] = true;
+        $_SESSION["email"] = $email; // Used for pages to identify user when performing queries.
         exit("success");
     }else{
         exit("Invalid password!");
