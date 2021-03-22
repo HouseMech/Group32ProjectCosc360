@@ -56,9 +56,10 @@
         <br/>
         <input name="pTags" id="pTags" type="text" />
         <br/>
-        <label for="pImg">Upload Image:</label>
+        <!-- Only allow .jpeg/ .jpg images to be uplaoded for simplicity. -->
+        <label for="pImg">Upload Image <i>(.jpg)</i>:</label>
         <br/>
-        <input type="file" id="pImg" name="pImg" accept="image/*">
+        <input type="file" id="pImg" name="pImg" accept="image/jpeg">
         <br/>
         <p id="commentText">
         <input type="checkbox" id="pComments" name="pComments" value="1" checked/>
