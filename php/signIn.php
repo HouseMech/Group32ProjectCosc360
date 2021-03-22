@@ -34,7 +34,16 @@ if(is_null($row)){
     if(password_verify($password, $row["password"])){
         // sets session variable to know user is logged in
         $_SESSION["login"] = true;
-        $_SESSION["email"] = $email; // Used for pages to identify user when performing queries.
+        $_SESSION["email"] = $email; 
+        // Determine username for user and store as session['username']. Helpful for other pages.
+        $stmt->close();
+        $stmt = $conn->prepare("SELECT userName FROM blogUser WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $_SESSION['username'] = $row["userName"];
+        $conn -> close();
         exit("success");
     }else{
         exit("Invalid password!");

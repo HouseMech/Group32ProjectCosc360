@@ -52,6 +52,16 @@ $stmt = $conn->prepare("INSERT INTO blogUser (userName, password, firstName, las
 $stmt->bind_param("sssss", $userName, $hash , $fName, $lName, $email,);
 if($stmt->execute()){
     $_SESSION["login"] = true;
+    $_SESSION["email"] = $email; 
+    // Determine username for user and store as session['username']. Helpful for other pages.
+    $stmt->close();
+    $stmt = $conn->prepare("SELECT userName FROM blogUser WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $_SESSION['username'] = $row["userName"];
+    $conn -> close();
     exit("success");
 }else{
     exit("Something went wrong at our end try again");
