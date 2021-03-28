@@ -156,8 +156,7 @@ a:hover {
 }
 
 #center {
-  height: 600px;
-  overflow: scroll;
+  min-height: 600px;
   border: solid 3pt black;
   padding: 1em;
   margin: auto 2em auto 2em;
