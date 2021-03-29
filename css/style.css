@@ -62,6 +62,19 @@ active {
   transition-timing-function: linear;
 }
 
+#active-item {
+  background-color: rgb(9, 9, 65);
+  border-radius: 10%;
+  margin: 0.5em;
+  border: solid 1pt black;
+  box-shadow: 4px 4px black;
+  font-size: 2em;
+  text-align: center;
+  padding: 0.5em;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+
 #menu {
   margin: auto;
 }
@@ -143,8 +156,7 @@ a:hover {
 }
 
 #center {
-  height: 600px;
-  overflow: scroll;
+  min-height: 600px;
   border: solid 3pt black;
   padding: 1em;
   margin: auto 2em auto 2em;
@@ -158,6 +170,78 @@ a:hover {
   border: solid 4pt lightyellow;
   transition-duration: 1s;
   transition-timing-function: ease;
+}
+
+#sidebar-topdiv {
+  margin: 1em;
+  margin-bottom: 1em;
+}
+
+#userProfilePicture {
+  width: 85%;
+  height: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+#sidebar-username {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-family: Quicksand;
+  font-size: 1em;
+  transition-timing-function: ease-in;
+  transition-duration: 1s;
+}
+
+#sidebar-btn {
+  background-color: rgb(235, 235, 235);
+  margin: 0.5em 0.5em 0.5em 0.5em;
+  font-size: 1em;
+  text-align: center;
+  border-radius: 10%;
+  color: black;
+  font-weight: bold;
+  padding: 1em;
+  border: solid 2pt black;
+  cursor: pointer;
+  font-weight: bold;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+  box-shadow: 2px 2px black;
+}
+
+#sidebar-btn:hover {
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  background-color: #c2675f;
+  color: white;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+
+#active-btn {
+  background-color: #c2675f;
+  color: white;
+  text-align: center;
+  margin: 1em 1em 1em 1em;
+  font-size: 1em;
+  border-radius: 10%;
+  font-weight: bold;
+  padding: 1em;
+  border: solid 2pt black;
+  cursor: pointer;
+  font-weight: bold;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+}
+
+#sidebar-btn:focus {
+  outline: none;
+  font-weight: bold;
+  font-family: Quicksand;
 }
 
 /* Sign In Page Styling */
@@ -207,6 +291,192 @@ a:hover {
   color: rgb(84, 26, 16);
 }
 
-.error{
-  background-color: red
+.error {
+  background-color: red;
+}
+
+/* newPost.html styling */
+#newPost-form {
+  margin: auto;
+  display: block;
+  text-align: center;
+  background-color: rgb(219, 212, 212);
+  border: solid 3pt black;
+}
+
+#newPost-form label {
+  font-weight: bold;
+  font-size: 2em;
+  margin: 2em;
+}
+
+#pTitle {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+  border: solid 2pt black;
+  border-radius: 0.2em;
+  transition-timing-function: ease-out;
+  transition-duration: 2s;
+}
+
+#pTitle:hover {
+  background-color: rgb(250, 250, 212);
+  transition-timing-function: ease-in;
+  transition-duration: 1s;
+}
+
+#pDesc {
+  text-align: left;
+  margin-bottom: 1em;
+  font-size: 2em;
+  border: solid 2pt black;
+  border-radius: 0.2em;
+  transition-timing-function: ease-out;
+  transition-duration: 2s;
+}
+
+#pDesc:hover {
+  background-color: rgb(250, 250, 212);
+  transition-timing-function: ease-in;
+  transition-duration: 1s;
+}
+
+#pTags {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+  border: solid 2pt black;
+  border-radius: 0.2em;
+  transition-timing-function: ease-out;
+  transition-duration: 2s;
+}
+
+#pTags:hover {
+  background-color: rgb(250, 250, 212);
+  transition-timing-function: ease-in;
+  transition-duration: 1s;
+}
+
+#pImg {
+  text-align: center;
+  background-color: rgb(185, 185, 185);
+  display: inline;
+  margin-bottom: 1em;
+}
+
+#commentText {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#pSubmit {
+  text-align: center;
+  font-size: 2em;
+  background-color: rgb(192, 49, 49);
+  color: white;
+  border: solid 2pt black;
+  border-radius: 2em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  width: 60%;
+  box-shadow: 2px 2px black;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+#pSubmit:hover {
+  text-align: center;
+  font-size: 2em;
+  background-color: rgb(228, 76, 76);
+  color: white;
+  border: solid 2pt black;
+  border-radius: 2em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  width: 70%;
+  transition-duration: 2s;
+  font-weight: bold;
+  transition-timing-function: ease;
+}
+
+/* viewPosts.php styling */
+#numPosts h2 {
+  text-align: center;
+}
+
+#subHead {
+  text-align: center;
+  background-color: rgb(41, 41, 39);
+  font-size: 2em;
+  font-weight: bold;
+  margin: 1em;
+  padding: 0.5em;
+  color: white;
+}
+
+#blogPost {
+  background-color: rgb(47, 47, 47);
+  border-radius: 1em;
+  padding: 1em;
+  margin: 2em;
+}
+
+#blogPost h2 {
+  background-color: rgb(195, 92, 92);
+  font-size: 2em;
+  font-weight: bold;
+  padding: 0.25em;
+  border-radius: 1em;
+  color: white;
+  width: 90%;
+  margin: 1em auto 1em auto;
+  text-align: center;
+}
+
+#blogPost h3 {
+  color: yellow;
+  text-align: center;
+}
+
+#blogPost h4 {
+  color: white;
+  text-align: center;
+}
+
+#blogPost p {
+  color: white;
+  text-align: center;
+  margin: 1em;
+}
+
+#blogPost h5 {
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  overflow-y: scroll;
+  margin-top: 1em;
+  background-color: rgb(185, 185, 185);
+  border-radius: 2em;
+  padding: 1em;
+  width: 90%;
+  margin: auto;
+}
+
+#blogPost a {
+  color: white;
+  text-align: center;
+  margin: auto;
+  font-size: 2em;
+  transition-timing-function: ease-in;
+  transition-duration: 2s;
+  box-shadow: 4px 2px black;
+}
+
+#blogPost:hover {
+  background-color: rgb(90, 90, 88);
+  transition-timing-function: ease-out;
+  transition-duration: 1s;
+  border: solid 2px black;
+  box-shadow: none;
 }

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    
+
     var userName = $("#userName");
     var password = $("#password");
     var confirmPassword = $("#confirmPassword");
@@ -7,7 +7,7 @@ $(document).ready(function() {
     var lName = $("#lName");
     var email = $("#email");
     var submit = $("#signUp-btn");
-    
+
     var elements = [userName, password, fName, lName, email, confirmPassword];
     // remove red highlighting once input changed
     $.each(elements, function() {
