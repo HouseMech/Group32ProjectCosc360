@@ -36,17 +36,20 @@
   </header>
 
   <!-- Display sidebar depending on user login status. (Show if logged in, hide if not)-->
-  <div id="sidebar">
-    <div id="sidebar-topdiv">
-      <img id="userProfilePicture" src="https://painrehabproducts.com/wp-content/uploads/2014/10/facebook-default-no-profile-pic.jpg" alt="userProfilePicture">
-      <p id="sidebar-username">Username</p>
-    </div>
-    <div id="sidebar-bottomdiv">
-      <div id="sidebar-btn" onclick="location.href='pages/newPost.html'">New Post</div>
-      <div id="sidebar-btn" onclick="location.href='php/getPosts.php'">View Posts</div>
-      <div id="sidebar-btn" onclick="location.href='pages/viewComments.html'">View Comments</div>
-      <div id="sidebar-btn" onclick="location.href='pages/accountSettings.html'">Account Settings</div>
-    </div>
+  <div id="setup">
+    <script>
+      $.ajax({
+       url: 'php/sidebar.php',
+         success: function (response) {
+           var sidebar = $(response);
+           $('#setup').append(sidebar);
+           console.log(response);
+           if (response != null && response != "") {
+             $('#setup').attr("id", "sidebar");
+           }
+         }
+      });
+    </script>
   </div>
 
   <div id="center">
