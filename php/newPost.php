@@ -1,9 +1,6 @@
 <?php
-  session_start();
-  $user = 'root';
-  $pass = '';
-  $dbname = 'blog';
-
+  include "commonFunctions.php";
+  startSession();
   // Get form info. 
   $title = $_POST['pTitle']; // required
   $desc = $_POST['pDesc']; // required
@@ -18,7 +15,7 @@
     $image = base64_encode(file_get_contents(addslashes($_FILES['pImg']['tmp_name'])));
 
      // Update the image to be saved as the pid.jpg
-    $conn = new mysqli('localhost', $user, $pass, $dbname) or die("unable to connect");
+    $conn = createConnection();
     $sql = "SELECT MAX(pid) FROM post";
     // Get pid for this post, increment by one because it hasn't been added into db yet.
     if ($row = $conn -> query($sql)) {$pid = $row -> fetch_row()[0] + 1;}
@@ -37,10 +34,12 @@
   }
 
   // create connection and insert post into database.
-  $conn = new mysqli('localhost', $user, $pass, $dbname) or die("unable to connect");
-  $stmt = $conn->prepare("INSERT INTO post (pUserName, description, imagePath, image, likes, postname, topic, allowComment) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+  $conn = createConnection();
+  //create time of post
+  $curTime = date("Y-m-d H:i:s");
+  $stmt = $conn->prepare("INSERT INTO post (pUserName, description, imagePath, image, likes, postName, topic, allowComment, time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
   $likes = 0;
-  $stmt->bind_param("ssssssss", $_SESSION['username'], $desc , $tempname, $image, $likes, $title, $tags, $allowComments);
+  $stmt->bind_param("sssssssss", $_SESSION['username'], $desc , $tempname, $image, $likes, $title, $tags, $allowComments, $curTime);
   if($stmt->execute()){
     $stmt->close();
     header("Location: ../pages/profile.html");
