@@ -5,6 +5,7 @@
     <title>MyBlogPost</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <?php  include "commonFunctions.php"; ?>
   </head>
 
   <body>
@@ -44,14 +45,12 @@
   <div id="center">
     <h2 id='subHead'>View Your Post:</h2>
     <?php
-      session_start();
-      $user = 'root';
-      $pass = '';
-      $dbname = 'blog';
+      startSession();
+      
       $username = $_SESSION['username'];
       
       // create connection and insert post into database.
-      $conn = new mysqli('localhost', $user, $pass, $dbname) or die("unable to connect");
+      $conn = createConnection();
       $stmt = $conn->prepare("SELECT * FROM post WHERE pUserName = ? ");
       $stmt->bind_param("s", $username);
       $stmt->execute();

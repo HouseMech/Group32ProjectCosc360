@@ -1,18 +1,13 @@
 <?php
 // add new user to database unless someone else has the same username or email. 
 // if account registration correct set session varable 'login' to true
-// credentials 
-$user = 'root';
-$pass = '';
-$dbname = 'blog';
+include "commonFunctions.php";
 
 // start session so if the user is logged in can be tracked across pages
 // session_status means there is no session started
-if(session_status() != PHP_SESSION_ACTIVE ){
-    session_start();
-}
+startSession();
 // if user already loggeed in exit
-if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+if(isLoggedIn()){
     exit("You are already logged in!");
 }
 
@@ -28,7 +23,7 @@ $hash = password_hash($password,
 
 
 // create connection
-$conn = new mysqli('localhost', $user, $pass, $dbname) or die("unable to connect");
+$conn = createConnection();
 // check if anyone has same email reject request
 $stmt = $conn->prepare("SELECT email FROM blogUser WHERE email = ?");
 $stmt->bind_param("s", $email);
@@ -52,16 +47,10 @@ $stmt = $conn->prepare("INSERT INTO blogUser (userName, password, firstName, las
 $stmt->bind_param("sssss", $userName, $hash , $fName, $lName, $email,);
 if($stmt->execute()){
     $_SESSION["login"] = true;
-    $_SESSION["email"] = $email; 
+    $_SESSION["email"] = $email;
+    $_SESSION['username'] = $userName; 
     // Determine username for user and store as session['username']. Helpful for other pages.
     $stmt->close();
-    $stmt = $conn->prepare("SELECT userName FROM blogUser WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
-    $_SESSION['username'] = $row["userName"];
-    $conn -> close();
     exit("success");
 }else{
     exit("Something went wrong at our end try again");
