@@ -1,45 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>MyBlogPost</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </head>
+  <?php include '../layouts/global_head_include.php';?>
 
   <body>
-  <header id="masthead">
-    <table>
-      <tr>
-        <td id="menuTitle">
-          <h1>MyBlogPost</h1>
-          <input type="text" placeholder="Search...">
-      </tr>
-      <tr>
-        <td>
-          <div id="menu">
-            <a id="menuItem" href="../index.html"><em>Home</em></a>
-            <a id="active-item" href="./profile.html">Profile</a>
-            <a id="menuItem" href="../php/signOut.php">Sign Out</a>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </header>
+  <?php include '../layouts/header.php';?>
 
-  <!-- Display sidebar depending on user login status. (Show if logged in, hide if not)-->
-  <div id="sidebar">
-    <div id="sidebar-topdiv">
-      <img id="userProfilePicture" src="https://painrehabproducts.com/wp-content/uploads/2014/10/facebook-default-no-profile-pic.jpg" alt="userProfilePicture">
-      <p id="sidebar-username">Username</p>
-    </div>
-    <div id="sidebar-bottomdiv">
-      <div id="sidebar-btn" onclick="location.href='../pages/newPost.html'">New Post</div>
-      <div id="active-btn" onclick="location.href='../php/getPosts.php'">View Posts</div>
-      <div id="sidebar-btn" onclick="location.href='../pages/viewComments.html'">View Comments</div>
-      <div id="sidebar-btn" onclick="location.href='../pages/accountSettings.html'">Account Settings</div>
-    </div>
-  </div>
+  <?php include '../layouts/sidebar.php';?>
 
   <div id="center">
     <h2 id='subHead'>View Your Post:</h2>
@@ -49,7 +15,7 @@
       $pass = '';
       $dbname = 'blog';
       $username = $_SESSION['username'];
-      
+
       // create connection and insert post into database.
       $conn = new mysqli('localhost', $user, $pass, $dbname) or die("unable to connect");
       $stmt = $conn->prepare("SELECT * FROM post WHERE pUserName = ? ");
@@ -93,14 +59,10 @@
           echo "<h3>" . '(' . $likes . ') 👍' . "</h3>";
           echo "</div>";
         }
-      } 
+      }
     ?>
   </div>
 
-  <footer id="mastfoot">
-    <a href="#">FAQ Page</a>
-    | <a href="#">Home</a>
-    | <a href="#">Contact Us</a>
-  </footer>
+  <?php include '../layouts/footer.php';?>
   </body>
 </html>
