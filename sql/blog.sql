@@ -14,10 +14,12 @@ CREATE TABLE post(
 	pUserName  VARCHAR(15),
 	description VARCHAR(700),
 	time DATETIME,
+	imagePath VARCHAR(100),
 	image BLOB,
 	likes INT, 
 	postName VARCHAR(70),
 	topic VARCHAR(20),
+	allowComment BOOLEAN,
 	PRIMARY KEY (pid),
 	FOREIGN KEY (pUserName) REFERENCES blogUser(userName)
 				ON DELETE NO ACTION
