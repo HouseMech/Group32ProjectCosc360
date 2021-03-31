@@ -10,7 +10,11 @@ if(isLoggedIn()){
 }
 // create connection
 $conn = createConnection();
+<<<<<<< HEAD
 // get info from post
+=======
+// get info from post 
+>>>>>>> main
 $email = $_POST["email"];
 $password = $_POST["password"];
 
