@@ -1,25 +1,20 @@
 <?php
 // add new user to database unless someone else has the same username or email.
+include "commonFunctions.php";
 
-// credentials 
-$user = 'root';
-$pass = '';
-$dbname = 'blog';
 // start session so if the user is logged in can be tracked across pages
-if(session_status() != PHP_SESSION_ACTIVE ){
-    session_start();
-}
+startSession();
 // if user already loggeed in exit
-if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+if(isLoggedIn()){
     exit("You are already logged in!");
 }
 // create connection
-$conn = new mysqli('localhost', $user, $pass, $dbname) or die("unable to connect");
-// get info from post 
+$conn = createConnection();
+// get info from post
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-// check if email and password are valid 
+// check if email and password are valid
 $stmt = $conn->prepare("SELECT email, password FROM blogUser WHERE email = ? ");
 $stmt->bind_param("s", $email);
 $stmt->execute();
