@@ -576,3 +576,41 @@ i {
   margin: 2em;
   display: inline;
 }
+
+/*post.php styling*/
+#comments-off h4 {
+  text-align: center;
+  margin: auto;
+}
+
+#comment-log {
+  margin: auto;
+  text-align: center;
+  border-radius: 2em;
+  background-color: rgb(68, 21, 2);
+  position: relative;
+  margin: 1em auto;
+  width: 80%;
+  padding: 1em;
+  border: solid 2pt black;
+}
+
+#comment-log p {
+  color: white;
+}
+
+#comment-form {
+  margin: auto;
+  text-align: center;
+  border-radius: 2em;
+  background-color: rgb(68, 21, 2);
+  position: relative;
+  margin: 1em auto;
+  width: 80%;
+  padding: 1em;
+  border: solid 2pt black;
+}
+
+#comment {
+  width: 80%;
+}
