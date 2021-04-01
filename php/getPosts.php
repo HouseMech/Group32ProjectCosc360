@@ -79,18 +79,55 @@
           $postTitle = $row['postName'];
           $postTopic = $row['topic'];
           $allowComments = $row['allowComment'];
+
+          // Display post title.
           echo "<div id='blogPost'>";
-          echo "<i><p>" . $time . "</p></i>";
           echo "<h2>" . $postTitle . "</h2>";
+          
+          // Display post time.
+          echo "<p id='time-log'>" . $time . "</p>";
+          
+          // Display description.
+          echo "<div id='desc-log'>";
           echo "<h5>" . $description . "</h5>";
-          if (empty($postTopic)){
-            echo "<h4><u>Topic: " . 'None' . "</u></h3>";
-          } else {
-            echo "<h4><u>Topic: " . $postTopic . "</u></h3>";
-          }
-          echo "<h3>" . $pUserName . "</h3>";
-          echo "<h3>" . '(' . $likes . ') 👍' . "</h3>";
           echo "</div>";
+
+          // Link to open attached image in new tab.
+          if (!empty($imagePath)) {
+            echo "<div id='img-link'><a href=" . $imagePath . ">View Attached Image</a></div>";
+          }
+
+          // Display post topic, author, and # likes.
+          echo "<div id='post-log'>";
+          echo "<table id='post-table'>";
+          echo "<tr>";
+          echo "<td id='post-header'>Post Topic:</td>";
+          echo "<td id='post-header'>Author:</td>";
+          echo "<td id='post-header'># Likes:</td>";
+          echo "</tr>";
+
+          echo "<tr>";
+          echo "<td>";
+          if (empty($postTopic)){
+            echo "<h3 id='post-item'>" . 'None' . "</u></h3>"; 
+          } else {
+            echo "<h3 id='post-item'>" . $postTopic . "</u></h3>";
+          }
+          echo "</td>";
+          echo "<td>" . "<h3 id='post-item'>" . $pUserName . "</h3></td>";
+          echo "<td>" . "<h3 id='post-item'>" . '(' . $likes . ') 👍' . "</h3></td>";
+          echo "</tr>";
+          echo "</table>";
+          echo "</div>";
+
+          echo "<div id='btn-holder'>";
+          echo "<form action='post.php?pid=" . $pid . "' method='get'>";
+          echo "<button type='submit' formmethod='post'>View Post</button>";
+          echo "</form>";
+          echo "</div>";
+
+          echo "</div>";
+          echo "<p id='spacer'>____________________________________</p>";
         }
       } 
     ?>
