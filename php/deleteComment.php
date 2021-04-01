@@ -3,21 +3,18 @@
   startSession();
   // Get comment information to insert into database.
   $pid = $_GET['pid'];
-  $username = $_GET['username'];
-  $comment = $_POST['comment'];
+  $cid = $_GET['cid'];
 
   // Create connection and insert comment.
   $conn = createConnection();
-  //create time of post
-  $curTime = date("Y-m-d H:i:s");
-  $stmt = $conn->prepare("INSERT INTO comment (cUserName, pid, commentContent) VALUES(?, ?, ?)");
-  $stmt->bind_param("sss", $username, $pid, $comment);
+  $stmt = $conn->prepare("DELETE FROM comment WHERE cid = ?");
+  $stmt->bind_param("s", $cid);
   if($stmt->execute()){
-    $stmt->close();
     // Redirect user back to getPosts page.
     header("Refresh:0; url=post.php?pid=" . $pid);
+    $stmt->close();
     exit("success");
   } else{
-    exit("Could not add comment. Please try again!");
+    exit("Could not delete comment. Please try again!");
   }
 ?>

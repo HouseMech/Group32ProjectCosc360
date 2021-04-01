@@ -593,6 +593,7 @@ i {
   width: 80%;
   padding: 1em;
   border: solid 2pt black;
+  overflow-y: scroll;
 }
 
 #comment-log p {
@@ -613,4 +614,57 @@ i {
 
 #comment {
   width: 80%;
+}
+
+#comment-div {
+  border-radius: 1em;
+}
+
+#comment-table,
+td,
+tr {
+  padding: 1em;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#comment-table {
+  border-spacing: 2em 0;
+  border-collapse: separate;
+}
+
+#cUsername {
+  background-color: rgb(226, 226, 225);
+  border-radius: 1em;
+}
+
+#commentContent {
+  background-color: rgb(15, 15, 13);
+  border-radius: 1em;
+  color: white;
+}
+
+#cLikes {
+  background-color: rgb(18, 29, 42);
+  color: white;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 1em;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+}
+
+#cLikes:hover {
+  background-color: rgb(36, 76, 126);
+  color: white;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 1em;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+}
+
+#comment-del-btn {
+  border-radius: 1em;
+  padding: 1em;
 }

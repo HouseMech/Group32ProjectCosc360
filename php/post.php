@@ -61,8 +61,8 @@
       echo "</tr>";
       echo "<tr>";
       echo "<td>";
-      if (empty($postTopic)){ echo "<h3 id='post-item'>" . 'None' . "</u></h3>"; } 
-      else { echo "<h3 id='post-item'>" . $postTopic . "</u></h3>"; }
+      if (empty($topic)){ echo "<h3 id='post-item'>" . 'None' . "</u></h3>"; } 
+      else { echo "<h3 id='post-item'>" . $topic . "</u></h3>"; }
       echo "</td>";
       echo "<td>" . "<h3 id='post-item'>" . $user . "</h3></td>";
       echo "<td>" . "<h3 id='post-item'>" . '(' . $likes . ') 👍' . "</h3></td>";
@@ -89,11 +89,33 @@
           while ($row = $result->fetch_assoc()){
             // Get comment information.
             $cUserName = $row['cUserName'];
-            $commentConent = $row['commentContent'];
+            $commentContent = $row['commentContent'];
             $cLikes = $row['likes'];
             $time = $row['time'];
-            echo "<div>";
-            echo "<h2>" . $cUserName . "</h2>";
+            $cid = $row['cid'];
+
+            echo "<div id='comment-div'>";
+            echo "<table id='comment-table'>";
+            echo "<tr><td id='time-log'>" . $time . "</td></tr>";
+            echo "<tr>";
+            echo "<td id='cUsername'>" . $cUserName . ":</td>";
+            echo "</tr>";
+            echo "<tr>";
+            echo "<td id='commentContent'>" . $commentContent . "</td>";
+            echo "</tr>";
+            echo "<tr>";
+            echo "<td id='cLikes'>" . '(' . $cLikes . ') 👍' . "</td>";
+            echo "</tr>";
+            if ($cUserName == $username){
+              echo "<tr>";
+              echo "<td>";
+              echo "<form action='php/deleteComment.php?pid=" . $pid . "&cid=" . $cid . "' method='get'>";
+              echo "<button id='comment-del-btn' type='submit' formmethod='post'>❌ comment</button>";
+              echo "</form>";
+              echo "</td>";
+              echo "</tr>";
+            }
+            echo "</table>";
             echo "</div>";
           }
         } 
