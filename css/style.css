@@ -415,68 +415,164 @@ a:hover {
   color: white;
 }
 
+/* Each post is contained within it's own div named blogPost */
 #blogPost {
-  background-color: rgb(47, 47, 47);
+  background-color: rgb(80, 79, 79);
   border-radius: 1em;
   padding: 1em;
   margin: 2em;
 }
 
+/* Post Title */
 #blogPost h2 {
-  background-color: rgb(195, 92, 92);
+  background-color: rgb(255, 255, 255);
   font-size: 2em;
   font-weight: bold;
-  padding: 0.25em;
   border-radius: 1em;
-  color: white;
-  width: 90%;
-  margin: 1em auto 1em auto;
+  color: rgb(10, 6, 6);
+  margin: auto;
   text-align: center;
+  border: solid 2pt black;
 }
 
-#blogPost h3 {
-  color: yellow;
+/* Table containing the posts' title, author and # likes. */
+#post-log {
+  margin: auto;
   text-align: center;
+  border-radius: 2em;
+  background-color: rgb(22, 21, 21);
+  position: relative;
+  margin: 1em auto;
+  width: 60%;
+  padding: 1em;
 }
 
-#blogPost h4 {
-  color: white;
-  text-align: center;
+#post-table {
+  margin: 0 auto;
 }
 
-#blogPost p {
+#post-log h4,
+h3,
+i {
+  display: inline-block;
+  margin: 0.25em;
+}
+
+/* Post Topic, Post Author, # Likes; <td> items */
+#post-item {
+  background-color: rgb(18, 29, 42);
   color: white;
-  text-align: center;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 1em;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+}
+
+#post-item:hover {
+  background-color: rgb(36, 76, 126);
+  color: white;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 1em;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+}
+
+/* Post Topic Headers, Post Author, # Likes; <th> items */
+#post-header {
+  background-color: rgb(25, 26, 27);
+  color: white;
+  padding: 1em;
+  border-radius: 2em;
   margin: 1em;
 }
 
+/* Div containing time for the post. */
+#time-log {
+  background-color: rgb(54, 83, 144);
+  text-align: center;
+  margin: 1em;
+  border-radius: 2em;
+  width: 80%;
+}
+
+/* Post time */
+#blogPost p {
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+/* Spacer used between each post. */
+#spacer {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Link to image opener button */
+#img-link {
+  text-align: center;
+  background-color: rgb(9, 9, 65);
+  width: 20%;
+  margin: 1em auto;
+  color: white;
+  border-radius: 1em;
+}
+
+/* Post description */
 #blogPost h5 {
   text-align: center;
   color: white;
   font-size: 1em;
-  overflow-y: scroll;
-  margin-top: 1em;
-  background-color: rgb(185, 185, 185);
+  background-color: rgb(37, 37, 37);
+  margin: auto;
   border-radius: 2em;
   padding: 1em;
-  width: 90%;
-  margin: auto;
+  width: 80%;
 }
 
-#blogPost a {
-  color: white;
+/* Div containing 'View Post' & 'Delete Post' buttons in blogPost */
+#btn-holder {
   text-align: center;
-  margin: auto;
-  font-size: 2em;
-  transition-timing-function: ease-in;
-  transition-duration: 2s;
-  box-shadow: 4px 2px black;
+  padding: 1em;
 }
 
-#blogPost:hover {
-  background-color: rgb(90, 90, 88);
-  transition-timing-function: ease-out;
-  transition-duration: 1s;
-  border: solid 2px black;
-  box-shadow: none;
+#btn-view {
+  font-size: 1em;
+  font-weight: bold;
+  width: 60%;
+  margin: 1em;
+  padding: 1em;
+  background-color: rgb(51, 104, 165);
+  color: white;
+  border-radius: 2em;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+}
+
+#btn-delete {
+  font-size: 1em;
+  font-weight: bold;
+  width: 60%;
+  margin: 1em;
+  padding: 1em;
+  background-color: rgb(126, 63, 52);
+  color: white;
+  border-radius: 2em;
+  opacity: 0.5;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+}
+
+#btn-delete:hover {
+  opacity: 1;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+  border-color: gray;
+}
+
+#btn-item {
+  margin: 2em;
+  display: inline;
 }
