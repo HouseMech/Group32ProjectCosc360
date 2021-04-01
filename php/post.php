@@ -74,7 +74,30 @@
       // Display comment div if comments is turned on.
       if ($allowComments == 1){
         echo "<div id='comment-log'>";
-        echo "<p>comments</p>";
+        // Finally, fetch all the comments associated with this post.
+        $stmt->close();
+        $conn = createConnection();
+        $stmt = $conn->prepare("SELECT * FROM comment WHERE pid = ? ");
+        $stmt->bind_param("s", $pid);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $numComments = $result -> num_rows;
+        $stmt->close();
+        if ($numComments == 0){
+          echo "<p>No Comments Yet</p>";
+        } else {
+          while ($row = $result->fetch_assoc()){
+            // Get comment information.
+            $cUserName = $row['cUserName'];
+            $commentConent = $row['commentContent'];
+            $cLikes = $row['likes'];
+            $time = $row['time'];
+            echo "<div>";
+            echo "<h2>" . $cUserName . "</h2>";
+            echo "</div>";
+          }
+        } 
+
         echo "</div>";
         echo "<form id='comment-form' action='php/addComment.php?pid=" . $pid . "&username=" . $username . "' method='get'>";
         echo "<form id='comment-form' action='php/deletePost.php?pid=" . $pid . "' method='get'>";
