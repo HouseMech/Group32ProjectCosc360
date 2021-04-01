@@ -46,7 +46,6 @@
     <h2 id='subHead'>View Your Post:</h2>
     <?php
       startSession();
-      
       $username = $_SESSION['username'];
       
       // create connection and insert post into database.
@@ -128,7 +127,7 @@
           echo "</form>";
 
           // Delete post button.
-          echo "<form id='btn-item' action='#?pid=" . $pid . "' method='get'>";
+          echo "<form id='btn-item' action='deletePost.php?pid=" . $pid . "' method='get'>";
           echo "<button id='btn-delete' type='submit' formmethod='post'>Delete Post</button>";
           echo "</form>";
 
