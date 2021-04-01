@@ -20,7 +20,7 @@
       <tr>
         <td>
           <div id="menu">
-            <a id="menuItem" href="../index.html">Home</a>
+            <a id="menuItem" href="../index.php">Home</a>
             <a id="active-item" class="onactive" href="signin.html"><em>Sign In</em></a>
           </div>
         </td>
@@ -35,7 +35,7 @@
         <fieldset>
           <p><label for="email">Email:</label></p>
           <p><input type="email" name="email" id="email"  maxlength="30" /></p>
-          
+
           <p><label for="password">Password:</label></p>
           <p><input type="password" name="password" id="password"  maxlength="15" /></p>
           <a href="forgetPassword.html" id="forgetP">Forgot Password?</a>

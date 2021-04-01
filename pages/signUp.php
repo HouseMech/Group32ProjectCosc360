@@ -23,7 +23,7 @@ session_start();
       <tr>
         <td>
           <div id="menu">
-            <a id="menuItem" href="../index.html">Home</a>
+            <a id="menuItem" href="../index.php">Home</a>
             <a id="menuItem" class="inactive" href="#">Profile</a>
             <a id="menuItem" class="onactive" href="signin.html"><em>Sign In</em></a>
           </div>

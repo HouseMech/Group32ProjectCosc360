@@ -10,11 +10,15 @@ if(isLoggedIn()){
 }
 // create connection
 $conn = createConnection();
+<<<<<<< HEAD
+// get info from post
+=======
 // get info from post 
+>>>>>>> main
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-// check if email and password are valid 
+// check if email and password are valid
 $stmt = $conn->prepare("SELECT email, password FROM blogUser WHERE email = ? ");
 $stmt->bind_param("s", $email);
 $stmt->execute();

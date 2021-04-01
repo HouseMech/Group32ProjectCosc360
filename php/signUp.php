@@ -1,5 +1,5 @@
 <?php
-// add new user to database unless someone else has the same username or email. 
+// add new user to database unless someone else has the same username or email.
 // if account registration correct set session varable 'login' to true
 include "commonFunctions.php";
 
@@ -18,8 +18,8 @@ $lName = $_POST["lName"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 // encrypt password
-$hash = password_hash($password,  
-          PASSWORD_DEFAULT); 
+$hash = password_hash($password,
+          PASSWORD_DEFAULT);
 
 
 // create connection
@@ -48,7 +48,7 @@ $stmt->bind_param("sssss", $userName, $hash , $fName, $lName, $email,);
 if($stmt->execute()){
     $_SESSION["login"] = true;
     $_SESSION["email"] = $email;
-    $_SESSION['username'] = $userName; 
+    $_SESSION['username'] = $userName;
     // Determine username for user and store as session['username']. Helpful for other pages.
     $stmt->close();
     exit("success");

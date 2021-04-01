@@ -27,9 +27,9 @@ $(document).ready(function() {
                 data: {userName: userName.val(), password: password.val(), fName: fName.val(), lName: lName.val(), email: email.val()}
             }).done(function(data){
                 if(data == "success"){
-                    // submit form which will redirect to index.htmls
+                    // submit form which will redirect to index.phps
                     // will only work on local machine
-                    window.location.replace("http://localhost/Group32ProjectCosc360/index.html");
+                    window.location.replace("http://localhost/Group32ProjectCosc360/index.php");
                   }
                 //returns message if not sucessful
                 $("#message").html(data);
