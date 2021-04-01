@@ -121,9 +121,17 @@
           echo "</div>";
 
           echo "<div id='btn-holder'>";
-          echo "<form action='post.php?pid=" . $pid . "' method='get'>";
-          echo "<button type='submit' formmethod='post'>View Post</button>";
+
+          // View post button.
+          echo "<form id='btn-item' action='post.php?pid=" . $pid . "' method='get'>";
+          echo "<button id='btn-view' type='submit' formmethod='post'>View Post</button>";
           echo "</form>";
+
+          // Delete post button.
+          echo "<form id='btn-item' action='#?pid=" . $pid . "' method='get'>";
+          echo "<button id='btn-delete' type='submit' formmethod='post'>Delete Post</button>";
+          echo "</form>";
+
           echo "</div>";
 
           echo "</div>";

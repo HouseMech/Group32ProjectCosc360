@@ -531,3 +531,48 @@ i {
   padding: 1em;
   width: 80%;
 }
+
+/* Div containing 'View Post' & 'Delete Post' buttons in blogPost */
+#btn-holder {
+  text-align: center;
+  padding: 1em;
+}
+
+#btn-view {
+  font-size: 1em;
+  font-weight: bold;
+  width: 60%;
+  margin: 1em;
+  padding: 1em;
+  background-color: rgb(51, 104, 165);
+  color: white;
+  border-radius: 2em;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+}
+
+#btn-delete {
+  font-size: 1em;
+  font-weight: bold;
+  width: 60%;
+  margin: 1em;
+  padding: 1em;
+  background-color: rgb(126, 63, 52);
+  color: white;
+  border-radius: 2em;
+  opacity: 0.5;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+}
+
+#btn-delete:hover {
+  opacity: 1;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+  border-color: gray;
+}
+
+#btn-item {
+  margin: 2em;
+  display: inline;
+}
