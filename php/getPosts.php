@@ -101,9 +101,9 @@
           echo "<div id='post-log'>";
           echo "<table id='post-table'>";
           echo "<tr>";
-          echo "<td id='post-header'>Post Topic:</td>";
-          echo "<td id='post-header'>Author:</td>";
-          echo "<td id='post-header'># Likes:</td>";
+          echo "<th id='post-header'>Post Topic:</th>";
+          echo "<th id='post-header'>Author:</th>";
+          echo "<th id='post-header'># Likes:</th>";
           echo "</tr>";
 
           echo "<tr>";

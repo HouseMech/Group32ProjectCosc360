@@ -415,6 +415,7 @@ a:hover {
   color: white;
 }
 
+/* Each post is contained within it's own div named blogPost */
 #blogPost {
   background-color: rgb(80, 79, 79);
   border-radius: 1em;
@@ -422,6 +423,7 @@ a:hover {
   margin: 2em;
 }
 
+/* Post Title */
 #blogPost h2 {
   background-color: rgb(255, 255, 255);
   font-size: 2em;
@@ -433,6 +435,7 @@ a:hover {
   border: solid 2pt black;
 }
 
+/* Table containing the posts' title, author and # likes. */
 #post-log {
   margin: auto;
   text-align: center;
@@ -455,6 +458,7 @@ i {
   margin: 0.25em;
 }
 
+/* Post Topic, Post Author, # Likes; <td> items */
 #post-item {
   background-color: rgb(18, 29, 42);
   color: white;
@@ -475,6 +479,7 @@ i {
   transition-duration: 2s;
 }
 
+/* Post Topic Headers, Post Author, # Likes; <th> items */
 #post-header {
   background-color: rgb(25, 26, 27);
   color: white;
@@ -483,6 +488,7 @@ i {
   margin: 1em;
 }
 
+/* Div containing time for the post. */
 #time-log {
   background-color: rgb(54, 83, 144);
   text-align: center;
@@ -491,17 +497,20 @@ i {
   width: 80%;
 }
 
+/* Post time */
+#blogPost p {
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+/* Spacer used between each post. */
 #spacer {
   font-weight: bold;
   text-align: center;
 }
 
-/* Post topic */
-#blogPost h4 {
-  color: white;
-  text-align: center;
-}
-
+/* Link to image opener button */
 #img-link {
   text-align: center;
   background-color: rgb(9, 9, 65);
@@ -509,13 +518,6 @@ i {
   margin: 1em auto;
   color: white;
   border-radius: 1em;
-}
-
-/* Post time */
-#blogPost p {
-  color: white;
-  text-align: center;
-  margin: auto;
 }
 
 /* Post description */
