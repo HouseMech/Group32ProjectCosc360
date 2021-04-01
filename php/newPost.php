@@ -42,7 +42,7 @@
   $stmt->bind_param("sssssssss", $_SESSION['username'], $desc , $tempname, $image, $likes, $title, $tags, $allowComments, $curTime);
   if($stmt->execute()){
     $stmt->close();
-    header("Location: ../pages/profile.html");
+    header("Location: ../pages/profile.php");
     exit("success");
   } else{
     exit("Could not submit post. Please try again!");

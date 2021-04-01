@@ -9,7 +9,7 @@
   <?php include '../layouts/sidebar.php';?>
 
   <div id="center">
-    <form method="POST" action="../php/newPost.php" id="newPost-form" enctype="multipart/form-data">
+    <form method="POST" action="php/newPost.php" id="newPost-form" enctype="multipart/form-data">
       <fieldset>
         <label for="pTitle">Post Title:*</label>
         <br/>
