@@ -1,11 +1,16 @@
+
 -- phpMyAdmin SQL Dump
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
 -- Generation Time: Apr 02, 2021 at 12:29 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +39,7 @@ CREATE TABLE `blogUser` (
   `lastName` varchar(15) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `isAdmin` tinyint(1) DEFAULT NULL,
-  `profilePic` blob DEFAULT NULL
+  `profilePicPath` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -64,7 +69,6 @@ CREATE TABLE `post` (
   `description` varchar(700) DEFAULT NULL,
   `time` datetime DEFAULT current_timestamp(),
   `imagePath` varchar(100) DEFAULT NULL,
-  `image` blob DEFAULT NULL,
   `likes` int(11) DEFAULT NULL,
   `postName` varchar(70) DEFAULT NULL,
   `topic` varchar(20) DEFAULT NULL,
@@ -130,7 +134,3 @@ ALTER TABLE `comment`
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`pUserName`) REFERENCES `blogUser` (`userName`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
