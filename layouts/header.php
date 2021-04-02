@@ -1,4 +1,5 @@
-<header id="masthead" class="header-container">
+
+<header id="navbar" class="header-container">
   <div class="header-title">
     <h1>MyBlogPost</h1>
   </div>

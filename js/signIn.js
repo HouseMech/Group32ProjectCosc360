@@ -18,7 +18,7 @@ $(document).ready(function(){
       if(valid()){
           $.ajax({
               type: "post",
-              url:  "../php/signIn.php",
+              url:  "/php/signIn.php",
               data: {email: email.val(), password: password.val()}
           }).done(function(data){
               if(data == "success"){
@@ -47,5 +47,5 @@ $(document).ready(function(){
 function signUp_Visit() {
   // Redirect user to signUp page after clicking 'Sign Up' button.
   window.location.href = "../pages/signUp.php";
-  
+
 }

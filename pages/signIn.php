@@ -5,28 +5,14 @@
   <head>
     <meta charset="utf-8">
     <title>MyBlogPost</title>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 
-    <script type = "text/javascript" src="../js/signIn.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type = "text/javascript" src="../js/signIn.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+  </head>
   </head>
   <body>
-  <header id="masthead">
-    <table>
-      <tr>
-        <td id="menuTitle">
-          <h1>MyBlogPost</h1>
-          <input type="text" placeholder="Search...">
-      </tr>
-      <tr>
-        <td>
-          <div id="menu">
-            <a id="menuItem" href="../index.php">Home</a>
-            <a id="active-item" class="onactive" href="signin.html"><em>Sign In</em></a>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </header>
+  <?php include_once '../layouts/header.php';?>
 
   <div id="center">
 
@@ -48,10 +34,6 @@
 
   </div>
 
-  <footer id="mastfoot">
-    <a href="#">FAQ Page</a>
-    | <a href="#">Home</a>
-    | <a href="#">Contact Us</a>
-  </footer>
+  <?php include '../layouts/footer.php';?>
   </body>
 </html>

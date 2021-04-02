@@ -3,7 +3,7 @@
   <?php include '../layouts/global_head_include.php';?>
 
   <body>
-  <?php include '../layouts/header.php';?>
+  <?php include_once '../layouts/header.php';?>
 
   <!-- Display sidebar depending on user login status. (Show if logged in, hide if not)-->
   <?php include '../layouts/sidebar.php';?>

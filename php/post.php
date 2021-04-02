@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
-  <?php include '../layouts/header.php';?>
+  <?php include_once '../layouts/header.php';?>
   <?php include '../layouts/sidebar.php';?>
   <?php  include "commonFunctions.php"; ?>
 

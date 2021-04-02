@@ -6,12 +6,12 @@
   padding: 1em;
   margin: 2em;
   border: solid 3pt black;
-  transition: ease;
-  transition-duration: 2s;
 }
 
 body {
   background-color: rgb(63, 62, 62);
+  margin:0;
+  padding:0;
 }
 
 #masthead h1 {
@@ -38,7 +38,6 @@ tr {
   opacity: 0.6;
   border-radius: 1em;
   font-weight: bold;
-  transition-duration: 1s;
 }
 
 #menuItem:not(&.header-button) {
@@ -122,11 +121,16 @@ a:hover {
   /* border-radius: 2em; */
   /* padding: 0.5em;
   margin: 1em; */
-  transition-duration: 2s;
+  /* transition-duration: 2s; */
+  cursor: pointer;
 }
 
 #main {
   margin: 2em 5em 2em 5em;
+}
+
+.main-content{
+  padding-top: 100px;
 }
 
 #sidebar {

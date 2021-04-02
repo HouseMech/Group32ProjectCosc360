@@ -3,7 +3,7 @@
   <?php include '../layouts/global_head_include.php';?>
 
   <body>
-  <?php include '../layouts/header.php';?>
+  <?php include_once '../layouts/header.php';?>
   <?php include '../layouts/sidebar.php';?>
   <?php  include "commonFunctions.php"; ?>
 
@@ -47,10 +47,10 @@
           // Display post title.
           echo "<div id='blogPost'>";
           echo "<h2>" . $postTitle . "</h2>";
-          
+
           // Display post time.
           echo "<p id='time-log'>" . $time . "</p>";
-          
+
           // Display description.
           echo "<div id='desc-log'>";
           echo "<h5>" . $description . "</h5>";

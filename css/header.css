@@ -3,9 +3,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin:0;
+  background-color: rgb(114, 70, 62);
+  color: rgb(255, 255, 255);
+  border:3px solid #000;
+  position: fixed;
+  width:100%;
 }
-
+.header-title {
+  padding:5px;
+}
 .header-options {
+  padding:5px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -28,4 +37,14 @@
 
 .header-input {
   margin-right: 1em;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
 }
