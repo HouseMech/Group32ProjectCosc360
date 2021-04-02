@@ -11,7 +11,7 @@ if(!isLoggedIn()){
     $result = $conn->query("SELECT bloguser.profilePicPath From bloguser WHERE userName='$username'");
     $row = $result->fetch_assoc();
     # if user is logged in but doesn't have a profile pic show defualt
-    if(is_null($row)){
+    if(is_null($row['profilePicPath'])){
         echo "<img id='userProfilePicture' src='https://painrehabproducts.com/wp-content/uploads/2014/10/facebook-default-no-profile-pic.jpg' alt='userProfilePicture'>";
     }else{
         echo "<img id='userProfilePicture' src='".$row['profilePicPath']."'/>";
