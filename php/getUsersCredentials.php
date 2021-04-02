@@ -15,4 +15,5 @@ $result = $conn->query("SELECT * From bloguser WHERE userName='$username'");
 $row = $result->fetch_assoc();
 # return json output
 echo json_encode($row);
+$conn -> close();
 ?>
