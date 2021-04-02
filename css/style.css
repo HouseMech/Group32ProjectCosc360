@@ -3,6 +3,7 @@
 #masthead {
   background-color: rgb(114, 70, 62);
   color: rgb(255, 255, 255);
+  padding: 1em;
   margin: 2em;
   border: solid 3pt black;
   cursor: pointer;
@@ -17,7 +18,6 @@ body {
 #masthead h1 {
   margin: auto;
   font-size: 2em;
-  text-align: center;
   font-weight: bold;
 }
 
@@ -30,7 +30,7 @@ tr {
   border-spacing: 2em;
 }
 
-#masthead input {
+#masthead input:not(&.header-input) {
   padding: 1em;
   text-align: center;
   margin: 1em auto auto auto;
@@ -49,7 +49,7 @@ active {
   transition-duration: 2s;
 }
 
-#menuItem {
+#menuItem:not(&.header-button) {
   background-color: rgb(70, 70, 106);
   border-radius: 10%;
   margin: 0.5em;
@@ -127,9 +127,9 @@ a:visited {
 
 a:hover {
   background-color: rgb(170, 172, 174);
-  border-radius: 2em;
-  padding: 0.5em;
-  margin: 1em;
+  /* border-radius: 2em; */
+  /* padding: 0.5em;
+  margin: 1em; */
   transition-duration: 2s;
 }
 

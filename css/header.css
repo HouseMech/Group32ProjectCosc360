@@ -1,0 +1,32 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header-input input {
+  height: 3em;
+  border: 1px solid #fff;
+}
+.header-input input:placeholder {
+  color:#f1f1f1;
+}
+.header-button a {
+  background-color: rgb(70, 70, 106);
+  border: solid 1pt black;
+  text-decoration:none;
+  font-size: 1.2em;
+  padding: 0.5em;
+  text-align: center;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+.header-input {
+  margin-right: 1em;
+}
