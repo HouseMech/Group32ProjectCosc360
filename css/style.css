@@ -6,7 +6,6 @@
   padding: 1em;
   margin: 2em;
   border: solid 3pt black;
-  cursor: pointer;
   transition: ease;
   transition-duration: 2s;
 }
