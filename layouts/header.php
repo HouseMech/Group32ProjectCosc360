@@ -8,7 +8,7 @@
     </div>
 
     <div id="menu" class="header-button">
-      <a href="index.php">Home</a>
+      <a id="menuItem" href="index.php">Home</a>
       <!-- Display (Sign In / Profile / Sign Out) buttons depending on user login status. -->
       <script>
         $.ajax({
