@@ -1,6 +1,6 @@
 <?php
+## set a new user profile pic 
 include "commonFunctions.php";
-## in the future we may have to delete old profile pics or change naming system
 
 startSession();
 if(!isLoggedIn()){
@@ -17,11 +17,15 @@ if (count($_FILES) > 0 && is_uploaded_file($_FILES['profilePic']['tmp_name'])
   $destination = "./img/profilePics/".$username.".jpg";
   echo $destination;
   $conn->query("UPDATE bloguser SET profilePicPath='$destination' WHERE bloguser.userName='$username'") or die("Unable to insert image ".  mysqli_error($conn));
+  
+  $destination = "../img/profilePics/".$username.".jpg";
   $fileToMove = $_FILES['profilePic']['tmp_name'];
   if (move_uploaded_file($fileToMove,$destination)) {
     mysqli_commit($conn);
     $conn->close();
-    exit("new Profile Pic uploaded");  
+    #local host
+    header("Location:http://localhost/Group32ProjectCosc360/pages/accountSettings.php");
+    
   }
   else {
     echo "There was a problem moving the file.";
