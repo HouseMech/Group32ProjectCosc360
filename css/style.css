@@ -42,13 +42,6 @@ tr {
   transition-duration: 1s;
 }
 
-#masthead input:hover,
-active {
-  opacity: 1;
-  border: solid 2pt black;
-  transition-duration: 2s;
-}
-
 #menuItem:not(&.header-button) {
   background-color: rgb(70, 70, 106);
   border-radius: 10%;
@@ -206,7 +199,6 @@ a:hover {
   font-weight: bold;
   padding: 1em;
   border: solid 2pt black;
-  cursor: pointer;
   font-weight: bold;
   transition-duration: 2s;
   transition-timing-function: ease;
