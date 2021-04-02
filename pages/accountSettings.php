@@ -34,6 +34,11 @@
           <p><input type="submit" value="Save" id="saveBtn"/></p>
           <h3 id="message"></h3>
     </form>
+    <form enctype="multipart/form-data" id="imageForm" method="post" action="./php/setUserImage.php">
+      <label for="pImg">Upload new profile picture <i>(.jpg)</i>:</label>
+      <p><input type="file" id="pImg" name="profilePic" accept="image/jpeg"/></p>
+      <p><input type="submit" value="Upload" id="uploadBtn"/></p>
+    </form>
   </div>
 
   <?php include '../layouts/footer.php';?>
