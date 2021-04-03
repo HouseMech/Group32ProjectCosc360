@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 
-  <script type = "text/javascript" src="../js/likePost.js"></script>  
   <body>
   <?php include '../layouts/header.php';?>
   <?php include '../layouts/sidebar.php';?>
@@ -13,12 +11,14 @@
       startSession();
       $username = $_SESSION['username'];
 
-      $conn = createConnection();
-      // Display post with the newest post first. 
+      // Display post with the newest post first.
+      global $conn;
+      $conn = createConnection(); 
       $stmt = $conn->prepare("SELECT * FROM post WHERE pUserName = ? ORDER BY time DESC");
       $stmt->bind_param("s", $username);
       $stmt->execute();
       $result = $stmt->get_result();
+      $stmt->close();
       $num_posts = $result -> num_rows;
       if ($num_posts == 1){
         echo "<div id='numPosts'>";
@@ -37,8 +37,8 @@
           $pUserName = $row['pUserName'];
           $description = $row['description'];
           $time = $row['time'];
-          $image = $row['image'];
           $imagePath = $row['imagePath'];
+          $image = $row['image'];
           $likes = $row['likes'];
           $postTitle = $row['postName'];
           $postTopic = $row['topic'];
