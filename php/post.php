@@ -8,6 +8,7 @@
   <div class="main-content">
     <div id="center">
       <?php
+        include "commonFunctions.php";
         startSession();
         $username = $_SESSION['username'];
         $pid = $_GET['pid'];
