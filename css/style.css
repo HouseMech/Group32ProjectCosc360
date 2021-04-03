@@ -462,6 +462,7 @@ i {
   margin: 1em;
   transition-timing-function: ease;
   transition-duration: 2s;
+  cursor: pointer;
 }
 
 #post-item:hover {
@@ -472,6 +473,7 @@ i {
   margin: 1em;
   transition-timing-function: ease;
   transition-duration: 2s;
+  cursor: pointer;
 }
 
 /* Post Topic Headers, Post Author, # Likes; <th> items */

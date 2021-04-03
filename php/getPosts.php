@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
-
   <body>
   <?php include_once '../layouts/header.php';?>
   <?php include "commonFunctions.php"; ?>
@@ -37,7 +36,6 @@
             $pUserName = $row['pUserName'];
             $description = $row['description'];
             $time = $row['time'];
-            $image = $row['image'];
             $imagePath = $row['imagePath'];
             $likes = $row['likes'];
             $postTitle = $row['postName'];
@@ -69,7 +67,7 @@
             echo "<th id='post-header'>Author:</th>";
             echo "<th id='post-header'># Likes:</th>";
             echo "</tr>";
-
+            
             echo "<tr>";
             echo "<td>";
             if (empty($postTopic)){
@@ -97,10 +95,8 @@
             echo "</form>";
 
             echo "</div>";
-
             echo "</div>";
             echo "<p id='spacer'>____________________________________</p>";
-          }
         }
       ?>
     </div>
