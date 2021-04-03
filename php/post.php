@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
-  <?php include_once '../layouts/header.php';?>
+  <?php include '../layouts/header.php';?>
 
-  <?php  include "commonFunctions.php"; ?>
+
+  <?php include '../layouts/sidebar.php';?>
   <div class="main-content">
-    <?php include '../layouts/sidebar.php';?>
     <div id="center">
       <?php
         startSession();
