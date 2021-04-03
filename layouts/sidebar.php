@@ -2,13 +2,12 @@
 <?php
   session_start();
 ?>
-
-<div id="sidebar">
-  <div id="sidebar-topdiv">
-    <?php include "../php/getUserImage.php" ?>
-    <p id="sidebar-username">
-      <?php
-      if ((isset($_SESSION['login'])) && ($_SESSION['login'] == true)) {
+<?php if ((isset($_SESSION['login'])) && ($_SESSION['login'] == true)) : ?>
+  <div id="sidebar">
+    <div id="sidebar-topdiv">
+      <img id="userProfilePicture" src="https://painrehabproducts.com/wp-content/uploads/2014/10/facebook-default-no-profile-pic.jpg" alt="userProfilePicture">
+      <p id="sidebar-username">
+        <?php
           echo $_SESSION['username'];
       ?>
       </p>
