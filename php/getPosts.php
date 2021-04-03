@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
-
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 
+  <script type = "text/javascript" src="../js/likePost.js"></script>  
   <body>
   <?php include '../layouts/header.php';?>
   <?php include '../layouts/sidebar.php';?>
-
 
   <div id="center">
     <h2 id='subHead'>View Your Posts:</h2>
@@ -77,6 +77,7 @@
           } else {
             echo "<h3 id='post-item'>" . $postTopic . "</u></h3>";
           }
+
           echo "</td>";
           echo "<td>" . "<h3 id='post-item'>" . $pUserName . "</h3></td>";
           echo "<td>" . "<h3 id='post-item'>" . '(' . $likes . ') 👍' . "</h3></td>";
@@ -97,7 +98,6 @@
           echo "</form>";
 
           echo "</div>";
-
           echo "</div>";
           echo "<p id='spacer'>____________________________________</p>";
         }
