@@ -3,20 +3,19 @@
   <?php include '../layouts/global_head_include.php';?>
 
   <body>
-  <?php include_once '../layouts/header.php';?>
-  <?php  include "commonFunctions.php"; ?>
+  <?php include '../layouts/header.php';?>
 
   <div class="main-content">
     <?php include '../layouts/sidebar.php';?>
     <div id="center">
-      <h2 id='subHead'>View Your Post:</h2>
+      <h2 id='subHead'>View Your Posts:</h2>
       <?php
         startSession();
         $username = $_SESSION['username'];
 
-        // create connection and insert post into database.
         $conn = createConnection();
-        $stmt = $conn->prepare("SELECT * FROM post WHERE pUserName = ? ");
+        // Display post with the newest post first.
+        $stmt = $conn->prepare("SELECT * FROM post WHERE pUserName = ? ORDER BY time DESC");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
