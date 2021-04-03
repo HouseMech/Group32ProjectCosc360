@@ -37,9 +37,9 @@
   $conn = createConnection();
   //create time of post
   $curTime = date("Y-m-d H:i:s");
-  $stmt = $conn->prepare("INSERT INTO post (pUserName, description, imagePath, image, likes, postName, topic, allowComment, time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+  $stmt = $conn->prepare("INSERT INTO post (pid, pUserName, description, time, imagePath, image, likes, postName, topic, allowComment) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
   $likes = 0;
-  $stmt->bind_param("sssssssss", $_SESSION['username'], $desc , $tempname, $image, $likes, $title, $tags, $allowComments, $curTime);
+  $stmt->bind_param("ssssssssss", $pid, $_SESSION['username'], $desc, $curTime, $tempname, $image, $likes, $title, $tags, $allowComments);
   if($stmt->execute()){
     $stmt->close();
     header("Location: ../pages/profile.php");
