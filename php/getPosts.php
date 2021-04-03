@@ -5,7 +5,7 @@
   <body>
   <?php include '../layouts/header.php';?>
   <?php include '../layouts/sidebar.php';?>
-  <?php  include "commonFunctions.php"; ?>
+
 
   <div id="center">
     <h2 id='subHead'>View Your Post:</h2>

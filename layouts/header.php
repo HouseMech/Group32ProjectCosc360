@@ -8,7 +8,7 @@
     <tr>
       <td>
         <div id="menu">
-          <a id="active-item" href="index.php"><em>Home</em></a>
+          <a id="active-item" href="pages/index.php"><em>Home</em></a>
           <!-- Display (Sign In / Profile / Sign Out) buttons depending on user login status. -->
           <script>
             $.ajax({

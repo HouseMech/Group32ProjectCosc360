@@ -3,7 +3,7 @@
   <?php include '../layouts/global_head_include.php';?>
   <?php include '../layouts/header.php';?>
   <?php include '../layouts/sidebar.php';?>
-  <?php  include "commonFunctions.php"; ?>
+
 
   <div id="center">
     <?php

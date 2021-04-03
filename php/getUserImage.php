@@ -8,13 +8,13 @@ if(!isLoggedIn()){
 }else{
     $username = $_SESSION['username'];
     $conn = createConnection();
-    $result = $conn->query("SELECT bloguser.profilePicPath From bloguser WHERE userName='$username'");
+    $result = $conn->query("SELECT profilePic From bloguser WHERE userName='$username'");
     $row = $result->fetch_assoc();
     # if user is logged in but doesn't have a profile pic show defualt
-    if(is_null($row['profilePicPath'])){
+    if(is_null($row['profilePic'])){
         echo "<img id='userProfilePicture' src='https://painrehabproducts.com/wp-content/uploads/2014/10/facebook-default-no-profile-pic.jpg' alt='userProfilePicture'>";
     }else{
-        echo "<img id='userProfilePicture' src='".$row['profilePicPath']."'/>";
+        echo "<img id='userProfilePicture' src='".$row['profilePic']."'/>";
     }
     $conn -> close();
 }
