@@ -2,6 +2,7 @@
 <?php
   session_start();
 ?>
+
 <div id="sidebar">
   <div id="sidebar-topdiv">
     <?php include "../php/getUserImage.php" ?>
@@ -9,18 +10,15 @@
       <?php
       if ((isset($_SESSION['login'])) && ($_SESSION['login'] == true)) {
           echo $_SESSION['username'];
-      }
-      else {
-        echo 'username';
-      }
-    ?>
-    </p>
+      ?>
+      </p>
 
+    </div>
+    <div id="sidebar-bottomdiv">
+      <div id="sidebar-btn" onclick="location.href='pages/newPost.php'">New Post</div>
+      <div id="sidebar-btn" onclick="location.href='php/getPosts.php'">View Posts</div>
+      <div id="sidebar-btn" onclick="location.href='pages/viewComments.php'">View Comments</div>
+      <div id="sidebar-btn" onclick="location.href='pages/accountSettings.php'">Account Settings</div>
+    </div>
   </div>
-  <div id="sidebar-bottomdiv">
-    <div id="sidebar-btn" onclick="location.href='pages/newPost.php'">New Post</div>
-    <div id="sidebar-btn" onclick="location.href='php/getPosts.php'">View Posts</div>
-    <div id="sidebar-btn" onclick="location.href='pages/viewComments.php'">View Comments</div>
-    <div id="sidebar-btn" onclick="location.href='pages/accountSettings.php'">Account Settings</div>
-  </div>
-</div>
+<?php endif;  ?>
