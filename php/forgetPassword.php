@@ -24,6 +24,7 @@ if(is_null($row)){
     $stmt = $conn->prepare("UPDATE bloguser SET bloguser.password = ? WHERE email = ?");
     $stmt->bind_param("ss", $hash ,$email);
     $stmt->execute();
+    $conn -> close();
     // set up email 
     $to = $email;
     $subject = "My Blog Post password reset";
