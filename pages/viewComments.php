@@ -5,8 +5,10 @@
   <body>
   <?php include_once '../layouts/header.php';?>
 
-  <?php include '../layouts/sidebar.php';?>
-  <div id="center">
+  <div class="main-content">
+    <?php include '../layouts/sidebar.php';?>
+    <div id="center">
+    </div>
   </div>
 
   <?php include '../layouts/footer.php';?>
