@@ -15,6 +15,7 @@
   $stmt->execute();
   $stmt->close();
   $conn->close();
+  
   // Redirect user back to getPosts page.
   header("Refresh:0; url=getPosts.php");
 ?>

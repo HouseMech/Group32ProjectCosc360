@@ -32,6 +32,9 @@
           <p><label for="password">Password:</label></p>
           <p><input type="password" name="password" id="password" maxlength="15"/></p>
 
+          <p><label for="confirmPass">Confirm Password:</label></p>
+          <p><input type="password" name="confirmPass" id="confirmPass" maxlength="15"/></p>
+
           <p><input type="submit" value="Save" id="saveBtn"/></p>
           <h3 id="message"></h3>
     </form>
@@ -40,6 +43,18 @@
       <p><input type="file" id="pImg" name="profilePic" accept="image/jpeg"/></p>
       <p><input type="submit" value="Upload" id="uploadBtn"/></p>
     </form>
+
+    <!-- Delete account form. -->
+    <?php 
+      include "../php/commonFunctions.php";
+      startSession();
+      $username = $_SESSION['username'];
+      echo "<form id='deleteForm' action='./php/deleteAccount.php?userName=" . $username . "' method='get'>";
+      echo "<label for='deleteBtn'>Delete BlogPost Account:</label>";
+      echo "<p id='terms'>By clicking the 'Delete Account' button below, you agree to delete<br>your account and any posts or comments linked with it.</p>";
+      echo "<button id='deleteBtn' type='submit' formmethod='post'>Delete Account</button>";
+      echo "</form>";
+    ?>
   </div>
 
   <?php include '../layouts/footer.php';?>

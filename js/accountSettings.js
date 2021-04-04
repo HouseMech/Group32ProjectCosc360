@@ -4,7 +4,9 @@ $(document).ready(function(){
     var lName = $("#lName");
     var email = $("#email");
     var password = $("#password");
-    var elements = [userName, fName, lName, email, password];
+    var confirmPass = $('#confirmPass');
+
+    var elements = [userName, fName, lName, email, password, confirmPass];
     // get users credentals and diplays them in input boxes
     function updateScreen(){
         $.ajax({ 
@@ -52,6 +54,14 @@ $(document).ready(function(){
             $("#message").html("All fields must be filled!");
         }
     }
+
+    if (password.val() != confirmPass.val()){
+        password.addClass("error");
+        confirmPass.addClass("error");
+        valid = false;
+        $("#message").html("Passwords don't match!");
+    }
+
     return valid;
   }
 });
