@@ -38,7 +38,7 @@ session_start();
             <p><input type="password" name="password" id="password" maxlength="15"/></p>
 
             <p><label for="confirmPassword">Confirm Password:</label></p>
-            <p><input type="confirmPassword" name="confirmPassword" id="confirmPassword" maxlength="15" /></p>
+            <p><input type="password" name="confirmPassword" id="confirmPassword" maxlength="15" /></p>
 
             <p><input type="submit" value="Sign Up" id="signUp-btn"/></p>
             <h3 id="message"></h3>
