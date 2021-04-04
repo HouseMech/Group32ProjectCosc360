@@ -671,6 +671,7 @@ tr {
   text-align: center;
   margin: auto;
   display: block;
+  padding-top: 1em;
   text-align: center;
   background-color: rgb(187, 184, 184);
   border: solid 3pt black;
@@ -699,6 +700,7 @@ tr {
 
 #imageForm {
   text-align: center;
+  padding-top: 1em;
   margin: 1em auto;
   display: block;
   text-align: center;
@@ -737,7 +739,7 @@ tr {
 #imageForm #uploadBtn {
   text-align: center;
   font-size: 2em;
-  background-color: rgb(161, 55, 28);
+  background-color: rgb(32, 99, 150);
   color: white;
   border: solid 2pt black;
   border-radius: 2em;
@@ -750,6 +752,43 @@ tr {
 }
 
 #imageForm #uploadBtn:hover {
+  width: 45%;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+#deleteForm {
+  text-align: center;
+  margin: 1em auto;
+  display: block;
+  padding-top: 1em;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border: solid 3pt black;
+}
+
+#deleteForm label {
+  font-size: 2em;
+  margin: 2em;
+  font-weight: bold;
+}
+
+#deleteForm #deleteBtn {
+  text-align: center;
+  font-size: 2em;
+  background-color: rgb(161, 55, 28);
+  color: white;
+  border: solid 2pt black;
+  border-radius: 2em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  width: 40%;
+  box-shadow: 2px 2px black;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+#deleteForm #deleteBtn:hover {
   width: 45%;
   transition-duration: 1s;
   transition-timing-function: ease;
