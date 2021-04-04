@@ -32,6 +32,9 @@
           <p><label for="password">Password:</label></p>
           <p><input type="password" name="password" id="password" maxlength="15"/></p>
 
+          <p><label for="confirmPass">Confirm Password:</label></p>
+          <p><input type="password" name="confirmPass" id="confirmPass" maxlength="15"/></p>
+
           <p><input type="submit" value="Save" id="saveBtn"/></p>
           <h3 id="message"></h3>
     </form>

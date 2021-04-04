@@ -9,11 +9,13 @@ $lName = $_POST['lName'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
 $conn = createConnection();
 // hiden is placed in password input so if user changes it also change password
 if(strcmp($password, "hidden") !== 0){
     $stmt = $conn->prepare("UPDATE bloguser SET password=?, firstName=?, lastName=?, email=? WHERE userName=?");
-    $stmt->bind_param("sssss", $password, $fName, $lName, $email, $username);
+    $stmt->bind_param("sssss", $hash, $fName, $lName, $email, $username);
     $stmt->execute();
     $conn -> close();
     exit("sucess");
