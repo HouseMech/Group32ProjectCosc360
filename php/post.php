@@ -10,7 +10,8 @@
       <?php
         include "commonFunctions.php";
         startSession();
-        $username = $_SESSION['username'];
+        // Check if user is signed in.
+        if (empty($_SESSION["username"])){$username = 'NULL';} else {$username = $_SESSION['username'];}
         $pid = $_GET['pid'];
 
         // Get information about post.
@@ -85,6 +86,7 @@
           $result = $stmt->get_result();
           $numComments = $result -> num_rows;
           $stmt->close();
+
           if ($numComments == 0){
             echo "<p>No Comments Yet</p>";
           } else {
@@ -121,14 +123,17 @@
               echo "</div>";
             }
           }
-
-          echo "</div>";
-          echo "<form id='comment-form' action='php/addComment.php?pid=" . $pid . "&username=" . $username . "' method='get'>";
-          echo "<form id='comment-form' action='php/deletePost.php?pid=" . $pid . "' method='get'>";
-          $comment = '';
-          echo '<p><input type="text" name="comment" id="comment"  maxlength="60" value=' . $comment . '/></p>';
-          echo "<button id='btn-view' type='submit' formmethod='post'>Add Comment</button>";
-          echo "</form>";
+          
+          // If user is signed in, than display method buttons (comment, delete post, etc).
+          if ($username != 'NULL'){
+            echo "</div>";
+            echo "<form id='comment-form' action='php/addComment.php?pid=" . $pid . "&username=" . $username . "' method='get'>";
+            echo "<form id='comment-form' action='php/deletePost.php?pid=" . $pid . "' method='get'>";
+            $comment = '';
+            echo '<p><input type="text" name="comment" id="comment"  maxlength="60" value=' . $comment . '/></p>';
+            echo "<button id='btn-view' type='submit' formmethod='post'>Add Comment</button>";
+            echo "</form>";
+          }
         } else {
           // Else display that comments have been turned off.
           echo "<div id='comments-off'>";

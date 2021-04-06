@@ -793,3 +793,8 @@ tr {
   transition-duration: 1s;
   transition-timing-function: ease;
 }
+
+/* Search.php styling */
+#center b {
+  color: yellow;
+}
