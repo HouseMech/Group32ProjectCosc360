@@ -9,6 +9,12 @@
     <?php include '../layouts/sidebar.php';?>
 
     <div id="center">
+    <?php
+      include "commonFunctions.php";
+      startSession();
+      $user = $_GET['user'];
+      echo "<p>" . $user . "</p>";
+    ?>
     </div>
   </div>
 
