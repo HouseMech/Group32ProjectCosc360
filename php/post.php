@@ -21,6 +21,7 @@
         $stmt->execute();
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
+        
         // If no post.
         if(is_null($row)){
             exit("No posts for that pid.");
@@ -65,9 +66,16 @@
         echo "<tr>";
         echo "<td>";
         if (empty($topic)){ echo "<h3 id='post-item'>" . 'None' . "</u></h3>"; }
-        else { echo "<h3 id='post-item'>" . $topic . "</u></h3>"; }
+        else { 
+          echo "<form method='GET' action='php/search.php'>";
+          echo "<input id='post-item' name='search' type='submit' value=" . $topic . "></input>";
+          echo "</form>";
+         }
         echo "</td>";
-        echo "<td>" . "<h3 id='post-item'>" . $user . "</h3></td>";
+        echo "<td>";
+        echo "<form method='GET' action='php/search.php'>";
+        echo "<input id='post-item' name='search' type='submit' value=" . $user . "></input>";
+        echo "</form></td>";
         echo "<td>" . "<h3 id='post-item'>" . '(' . $likes . ') 👍' . "</h3></td>";
         echo "</tr>";
         echo "</table>";

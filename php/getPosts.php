@@ -74,10 +74,15 @@
               if (empty($postTopic)){
                 echo "<h3 id='post-item'>" . 'None' . "</u></h3>";
               } else {
-                echo "<h3 id='post-item'>" . $postTopic . "</u></h3>";
+                echo "<form method='GET' action='php/search.php'>";
+                echo "<input id='post-item' name='search' type='submit' value=" . $postTopic . "></input>";
+                echo "</form>";
               }
               echo "</td>";
-              echo "<td>" . "<h3 id='post-item'>" . $pUserName . "</h3></td>";
+              echo "<td>";
+              echo "<form method='GET' action='php/search.php'>";
+              echo "<input id='post-item' name='search' type='submit' value=" . $pUserName . "></input>";
+              echo "</form>";
               echo "<td>" . "<h3 id='post-item'>" . '(' . $likes . ') 👍' . "</h3></td>";
               echo "</tr>";
               echo "</table>";
