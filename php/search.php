@@ -9,7 +9,7 @@
     <div id="center">
       <?php
         global $search;
-        $search = $_GET['search']; 
+        $search = $_GET["search"]; 
         echo "<h2 id='subHead'>Search Results for: <b>" . $search . "</b></h2>";
         $conn = createConnection();
 

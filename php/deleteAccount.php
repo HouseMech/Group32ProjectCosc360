@@ -12,6 +12,12 @@
   $stmt->execute();
   $stmt->close();
 
+  // Begin by deleting all likes made by this user.
+  $stmt = $conn->prepare("DELETE FROM likes WHERE cUserName = ?");
+  $stmt->bind_param("s", $username);
+  $stmt->execute();
+  $stmt->close();
+
   // Get all posts made by this user.
   $stmt = $conn->prepare("SELECT pid FROM post WHERE pUserName = ?");
   $stmt->bind_param("s", $username);
