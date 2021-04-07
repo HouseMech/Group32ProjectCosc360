@@ -74,16 +74,27 @@
               if (empty($postTopic)){
                 echo "<h3 id='post-item'>" . 'None' . "</u></h3>";
               } else {
+                // Search for post with similar topics.
                 echo "<form method='GET' action='php/search.php'>";
                 echo "<input id='post-item' name='search' type='submit' value=" . $postTopic . "></input>";
                 echo "</form>";
               }
+
+              // View user profile.
               echo "</td>";
               echo "<td>";
-              echo "<form method='GET' action='php/search.php'>";
-              echo "<input id='post-item' name='search' type='submit' value=" . $pUserName . "></input>";
+              echo "<form method='GET' action='php/viewProfile.php'>";
+              echo "<input id='post-item' name='user' type='submit' value=" . $pUserName . "></input>";
               echo "</form>";
-              echo "<td>" . "<h3 id='post-item'>" . '(' . $likes . ') 👍' . "</h3></td>";
+              echo "</td>";
+              
+              // Like button.
+              echo "<td>";
+              echo "<form id='btn-item' action='php/like.php?pid=" . $pid . "&user=" . $username .  "' method='get'>";
+              echo "<button id='post-item' type='submit' formmethod='post'>" . '(' . $likes . ') 👍' . "</button>";
+              echo "</form>";
+              echo "</td>";
+
               echo "</tr>";
               echo "</table>";
               echo "</div>";

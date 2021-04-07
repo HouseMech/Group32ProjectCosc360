@@ -1,15 +1,26 @@
 <?php
   include "commonFunctions.php";
   startSession();
+
+  // Get pid for post to delete.
   $pid = $_GET['pid'];
+
   // create connection and delete post (pid) from posts table.
   $conn = createConnection();
-  // First delete all comments linked to that post. (Foreign key constraint)
+
+  // Begin by deleting all the likes for each post first.
+  $stmt = $conn->prepare("DELETE FROM likes WHERE pid = ?");
+  $stmt->bind_param("s", $pid);
+  $stmt->execute();
+  $stmt->close();
+
+  // Then, delete all comments linked to that post.
   $stmt = $conn->prepare("DELETE FROM comment WHERE pid = ?");
   $stmt->bind_param("s", $pid);
   $stmt->execute();
   $stmt->close();
   
+  // Finally, delete the post from its table. 
   $stmt = $conn->prepare("DELETE FROM post WHERE pid = ?");
   $stmt->bind_param("s", $pid);
   $stmt->execute();
