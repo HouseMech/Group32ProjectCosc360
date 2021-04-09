@@ -1,7 +1,7 @@
 <?php
 // add new user to database unless someone else has the same username or email.
 // if account registration correct set session varable 'login' to true
-include "commonFunctions.php";
+include_once "commonFunctions.php";
 
 // start session so if the user is logged in can be tracked across pages
 // session_status means there is no session started
@@ -31,6 +31,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 // if null that means no other users have the same email
 if(!is_null($result->fetch_assoc())){
+    $conn->close();
     exit("Email is already taken");
 }
 $stmt->close();
@@ -40,6 +41,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 // if not null someone already has username
 if(!is_null($result->fetch_assoc())){
+    $conn->close();
     exit("userName is taken");
 }
 $stmt->close();
@@ -51,8 +53,10 @@ if($stmt->execute()){
     $_SESSION['username'] = $userName;
     // Determine username for user and store as session['username']. Helpful for other pages.
     $stmt->close();
+    $conn->close();
     exit("success");
 }else{
+    $conn->close();
     exit("Something went wrong at our end try again");
 }
 ?>

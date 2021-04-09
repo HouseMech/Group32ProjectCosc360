@@ -1,5 +1,5 @@
 <?php
-  include "commonFunctions.php";
+  include_once "commonFunctions.php";
   startSession();
 
   // Get pid for post to delete.

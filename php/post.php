@@ -8,7 +8,7 @@
   <div class="main-content">
     <div id="center">
       <?php
-        include "commonFunctions.php";
+        include_once "commonFunctions.php";
         startSession();
         // Check if user is signed in.
         if (empty($_SESSION["username"])){$username = 'NULL';} else {$username = $_SESSION['username'];}
@@ -157,7 +157,7 @@
           echo "<h4>Comments have been turned off.</h4>";
           echo "</div>";
         }
-
+        $conn->close();
       ?>
     </div>
   </div>

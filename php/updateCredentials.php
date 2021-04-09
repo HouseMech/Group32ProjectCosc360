@@ -1,5 +1,5 @@
 <?php
-include "commonFunctions.php";
+include_once "commonFunctions.php";
 
 startSession();
 
@@ -13,7 +13,7 @@ $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $conn = createConnection();
 // hiden is placed in password input so if user changes it also change password
-if(strcmp($password, "hidden") !== 0){
+if(strcmp($password, "") !== 0){
     $stmt = $conn->prepare("UPDATE bloguser SET password=?, firstName=?, lastName=?, email=? WHERE userName=?");
     $stmt->bind_param("sssss", $hash, $fName, $lName, $email, $username);
     $stmt->execute();

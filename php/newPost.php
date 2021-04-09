@@ -1,5 +1,5 @@
 <?php
-  include "commonFunctions.php";
+  include_once "commonFunctions.php";
   startSession();
   // Get form info. 
   $title = $_POST['pTitle']; // required
@@ -42,9 +42,11 @@
   $stmt->bind_param("sssssssss", $pid, $_SESSION['username'], $desc, $curTime, $tempname, $likes, $title, $tags, $allowComments);
   if($stmt->execute()){
     $stmt->close();
+    $conn->close();
     header("Location: ../php/viewProfile.php?user=" . $_SESSION['username']);
     exit("success");
   } else{
+    $conn->close();
     exit("Could not submit post. Please try again!");
   }
   

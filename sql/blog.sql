@@ -34,7 +34,7 @@ CREATE TABLE `blogUser` (
   `lastName` varchar(15) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `isAdmin` tinyint(1) DEFAULT NULL,
-  `profilePic` blob DEFAULT NULL
+  `profilePic` varchar(36) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

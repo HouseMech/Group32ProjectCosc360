@@ -1,6 +1,6 @@
 <?php
 // add new user to database unless someone else has the same username or email.
-include "commonFunctions.php";
+include_once "commonFunctions.php";
 
 // start session so if the user is logged in can be tracked across pages
 startSession();
@@ -22,6 +22,7 @@ $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 // if null that email is not in the database
 if(is_null($row)){
+    $conn->close();
     exit("Invalid email");
 }else{
     // there can only be one row so no need to iterate
@@ -41,6 +42,7 @@ if(is_null($row)){
         $conn -> close();
         exit("success");
     }else{
+        $conn->close();
         exit("Invalid password!");
     }
 }
