@@ -1,7 +1,7 @@
 <?php
 # Current assumption sidebar is hidden so only logged in users can see account settings
 # so will not check if they are logged in might have to change later..
-include "commonFunctions.php";
+include_once "commonFunctions.php";
 
 startSession();
 

@@ -9,7 +9,7 @@
     <div id="center">
       <h2 id='subHead'>View Your Comments:</h2>
       <?php
-        include "../php/commonFunctions.php";
+        include_once "../php/commonFunctions.php";
         startSession();
         // Prevent user from accessing this page unless signed in.
         if (empty($_SESSION["username"])){$username = 'NULL';} else {$username = $_SESSION['username'];}

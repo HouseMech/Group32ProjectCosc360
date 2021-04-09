@@ -1,8 +1,9 @@
 <?php
 ## checks to see if user has profile pic if it does it displays it if not displays the generic one.
-include "commonFunctions.php";
+include_once "commonFunctions.php";
 startSession();
 # if user not logged in display defualt
+
 if(!isLoggedIn()){
     echo "<img id='userProfilePicture' src='https://painrehabproducts.com/wp-content/uploads/2014/10/facebook-default-no-profile-pic.jpg' alt='userProfilePicture'>";   
 }else{

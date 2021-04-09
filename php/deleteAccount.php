@@ -1,7 +1,10 @@
 <?php
-  include "commonFunctions.php";
+  include_once "commonFunctions.php";
   startSession();
-  $username = $_GET['userName'];
+  if(!isLoggedIn()){
+    exit("you should not be here");
+  }
+  $username = $_SESSION['username'];
 
   // Create connection.
   $conn = createConnection();
@@ -46,13 +49,14 @@
   }
 
   // Finally, delete the user from the `users` table.
-  $stmt = $conn->prepare("DELETE FROM blogUser WHERE userName = ?");
+  $stmt = $conn->prepare("DELETE FROM bloguser WHERE userName = ?");
   $stmt->bind_param("s", $username);
   $stmt->execute();
   $stmt->close();
   $conn->close();
 
   // Redirect user back to home page.
+  Session_start();
   Session_destroy();
   $_SESSION["login"] = false;
   header("Location: ../pages/index.php");

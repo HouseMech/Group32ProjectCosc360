@@ -1,5 +1,5 @@
 <?php
-  include "commonFunctions.php";
+  include_once "commonFunctions.php";
   startSession();
   $pid = $_GET['pid'];
 
@@ -47,6 +47,7 @@
       $stmt->bind_param("ss", $num_likes, $pid);
       if($stmt->execute()){
         $stmt->close();
+        $conn->close();
         // Redirect user back to getPosts page.
         header("Refresh:0; url=post.php?pid=" . $pid);
         exit("success");
@@ -64,10 +65,12 @@
       $stmt->bind_param("ss", $num_likes, $pid);
       if($stmt->execute()){
         $stmt->close();
+        $conn->close();
         // Redirect user back to getPosts page.
         header("Refresh:0; url=post.php?pid=" . $pid);
         exit("success");
       }
     }  
+    $conn->close();
   }  
 ?>
