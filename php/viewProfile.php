@@ -10,7 +10,7 @@
 
     <div id="center">
     <?php
-      include "commonFunctions.php";
+      include_once "commonFunctions.php";
       startSession();
       $user = $_GET['user'];
       echo "<p>" . $user . "</p>";
