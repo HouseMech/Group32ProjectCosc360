@@ -5,7 +5,14 @@
 <?php if ((isset($_SESSION['login'])) && ($_SESSION['login'] == true)) : ?>
   <div id="sidebar">
     <div id="sidebar-topdiv">
-      <img id="userProfilePicture" src="https://painrehabproducts.com/wp-content/uploads/2014/10/facebook-default-no-profile-pic.jpg" alt="userProfilePicture">
+    <?php
+    #change relative referencing for index.php 
+    if($_SERVER['REQUEST_URI'] === "/Group32ProjectCosc360/index.php"){
+      include "./php/getUserImage.php";
+    }else{
+      include "../php/getUserImage.php";
+    }
+    ?>
       <p id="sidebar-username">
         <?php
           echo $_SESSION['username'];
