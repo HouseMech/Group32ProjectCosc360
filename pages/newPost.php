@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
-
+  <script type="text/javascript" src="./js/newPost.js"></script>
   <body>
   <?php include_once '../layouts/header.php';?>
 
@@ -31,6 +31,7 @@
         echo '<input type="file" id="pImg" name="pImg" accept="image/jpeg"><br/>';
         echo '<p id="commentText">';
         echo '<input type="checkbox" id="pComments" name="pComments" value="1" checked/>Allow Comments</p><br/>';
+        echo '<p id="message"><p>';
         echo '<input type="submit" value="POST" name="pSubmit" id="pSubmit"/>';
         echo '</fieldset>';
         echo '</form>';
