@@ -3,10 +3,10 @@ $(document).ready(function(){
     var fName = $("#fName");
     var lName = $("#lName");
     var email = $("#email");
-    var password = $("#password");
-    var confirmPass = $('#confirmPass');
 
-    var elements = [userName, fName, lName, email, password, confirmPass];
+
+
+    var elements = [userName, fName, lName, email];
     // get users credentals and diplays them in input boxes
     function updateScreen(){
         $.ajax({ 
@@ -20,11 +20,12 @@ $(document).ready(function(){
             fName.val(jsonObj.firstName);
             lName.val(jsonObj.lastName);
             email.val(jsonObj.email);
-            password.val("hidden");
+            
         });
     }
     // initially get all user credantials and place them in input boxes
     updateScreen();
+   
 
     $("#saveBtn").on('click', function(e){
         e.preventDefault();
@@ -54,14 +55,6 @@ $(document).ready(function(){
             $("#message").html("All fields must be filled!");
         }
     }
-
-    if (password.val() != confirmPass.val()){
-        password.addClass("error");
-        confirmPass.addClass("error");
-        valid = false;
-        $("#message").html("Passwords don't match!");
-    }
-
     return valid;
   }
 });
