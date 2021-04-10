@@ -799,3 +799,9 @@ tr {
 #center b {
   color: yellow;
 }
+
+/* Profile page styling. */
+#ppProfilePage {
+  width: 15%;
+  margin: auto;
+}
