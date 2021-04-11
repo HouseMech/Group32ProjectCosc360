@@ -18,7 +18,7 @@ session_start();
 
   <div class="main-content">
     <div id="center">
-
+      <h2 id='subHead'>Sign Up:</h2>
       <div class="signup-container">
         <form class="signup-form" action="" >
           <fieldset>

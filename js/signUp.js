@@ -52,8 +52,8 @@ $(document).ready(function() {
         }
         // make sure passwods match
         if(password.val() != confirmPassword.val()){
-            $("#message").html("Passwords must must match!")
-            valid = false
+            $("#message").html("Passwords must must match!");
+            valid = false;
         }
         return valid;
     }

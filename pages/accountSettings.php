@@ -16,6 +16,7 @@
     <?php include '../layouts/sidebar.php';?>
 
   <div id="center">
+    <h2 id='subHead'>Account Settings:</h2>
     <?php
       include_once "../php/commonFunctions.php";
       startSession();

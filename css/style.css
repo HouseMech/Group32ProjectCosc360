@@ -822,3 +822,7 @@ tr {
 }
 
 /*Home Page Styling */
+#helper {
+  text-align: center;
+  font-weight: bold;
+}

@@ -9,6 +9,7 @@
   <div class="main-content">
     <?php include '../layouts/sidebar.php';?>
     <div id="center">
+    <h2 id='subHead'>New Post:</h2>
     <?php
       include_once "../php/commonFunctions.php";
       startSession();
