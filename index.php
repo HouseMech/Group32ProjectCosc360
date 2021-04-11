@@ -10,6 +10,12 @@
       <?php include 'layouts/sidebar.php';?>
 
       <div id="center">
+        <h2 id='subHead'>Home:</h2>
+        <?php
+
+        
+
+        ?>
       </div>
   </div>
   <?php include 'layouts/footer.php';?>
