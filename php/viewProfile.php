@@ -54,7 +54,7 @@
 
       $conn = createConnection();
       $stmt = $conn->prepare("SELECT * FROM post WHERE pUserName = ? ORDER BY time DESC LIMIT 1");
-      $stmt->bind_param("s", $username);
+      $stmt->bind_param("s", $user);
       $stmt->execute();
       $result = $stmt->get_result();
       $num_posts = $result -> num_rows;
@@ -143,7 +143,7 @@
       echo "<p id='spacer'>____________________________________</p>";
 
       $stmt = $conn->prepare("SELECT * FROM comment WHERE cUserName = ? ORDER BY time DESC LIMIT 1");
-      $stmt->bind_param("s", $username);
+      $stmt->bind_param("s", $user);
       $stmt->execute();
       $result = $stmt->get_result();
       $num_posts = $result -> num_rows;
