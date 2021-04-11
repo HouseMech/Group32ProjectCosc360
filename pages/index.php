@@ -10,6 +10,10 @@
       <?php include '../layouts/sidebar.php';?>
 
       <div id="center">
+      <?php
+        header("Location: ../index.php");
+        exit();
+      ?>
       </div>
   </div>
   <?php include '../layouts/footer.php';?>

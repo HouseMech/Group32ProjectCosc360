@@ -805,3 +805,24 @@ tr {
   width: 15%;
   margin: auto;
 }
+
+#flName {
+  margin: auto;
+  text-align: center;
+  color: rgb(18, 29, 42);
+}
+
+#ppTab {
+  background-color: lightblue;
+  border-radius: 1em;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  border: solid 2pt black;
+}
+
+/*Home Page Styling */
+#helper {
+  text-align: center;
+  font-weight: bold;
+}
