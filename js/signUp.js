@@ -29,7 +29,7 @@ $(document).ready(function() {
                 if(data == "success"){
                     // submit form which will redirect to index.phps
                     // will only work on local machine
-                    window.location.replace("http://localhost/Group32ProjectCosc360/pages/index.php");
+                    window.location.replace("http://localhost/Group32ProjectCosc360/index.php");
                   }
                 //returns message if not sucessful
                 $("#message").html(data);
