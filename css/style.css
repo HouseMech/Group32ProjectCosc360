@@ -826,3 +826,9 @@ tr {
   text-align: center;
   font-weight: bold;
 }
+
+.arrow{
+  position:absolute;
+  right: 5em;
+  
+}
