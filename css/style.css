@@ -618,8 +618,8 @@ i {
   border-radius: 1em;
 }
 
-#comment-table,
-td,
+#comment-table
+td
 tr {
   padding: 1em;
   margin: 0 auto;
