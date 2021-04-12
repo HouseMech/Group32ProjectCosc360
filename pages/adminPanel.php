@@ -16,15 +16,14 @@
         startSession();
       ?>
       <?php if (isAdmin()): ?>
-          <h1>Admin panel</h1>
-          <table>
+          <h2 id="subHead">Admin panel</h2>
+          <table class="admin-table">
             <tr>
               <th>userName</th>
               <th>firstName</th>
               <th>lastName</th>
               <th>email</th>
               <th>Admin</th>
-              <th>password</th>
             </tr>
           <?php
             $conn = createConnection();

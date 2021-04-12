@@ -825,3 +825,19 @@ tr {
   text-align: center;
   font-weight: bold;
 }
+
+/* Admin Styling */
+
+.admin-table {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.admin-table th {
+  padding: 20px;
+}
+
+.admin-table tr:nth-child(2) {
+  background: #fff;
+}
