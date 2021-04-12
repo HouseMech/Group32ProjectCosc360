@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
+  <script type = "text/javascript" src="./js/getPost.js"></script>
+
   <body>
   <?php include_once '../layouts/header.php';?>
   <?php include_once "commonFunctions.php"; ?>
@@ -43,10 +45,11 @@
               $postTopic = $row['topic'];
               $allowComments = $row['allowComment'];
 
-              // Display post title.
+              // Display post title
               echo "<div id='blogPost'>";
-              echo "<h2>" . $postTitle . "</h2>";
-
+              echo "<h2>" . $postTitle . "<img class='arrow' src='./img/pageImgs/up_arrow.png' height=25 width=25></h2>";
+              // div needed for collapsable post
+              echo "<div class='slide'>";
               // Display post time.
               echo "<p id='time-log'>" . $time . "</p>";
 
@@ -114,6 +117,7 @@
               echo "</div>";
               echo "</div>";
               echo "<p id='spacer'>____________________________________</p>";
+              echo "</div>";
             }
             $conn->close();
           }
