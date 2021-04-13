@@ -1,6 +1,6 @@
 <header id="navbar" class="header-container">
   <div class="header-title">
-    <h1>MyBlogPost</h1>
+    <a class="header-title-link" href="index.php"><h1>MyBlogPost</h1></a>
   </div>
   <div class="header-options">
     <div class="header-input">

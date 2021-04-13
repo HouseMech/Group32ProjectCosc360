@@ -118,11 +118,6 @@ a:visited {
 
 a:hover {
   background-color: rgb(170, 172, 174);
-  /* border-radius: 2em; */
-  /* padding: 0.5em;
-  margin: 1em; */
-  /* transition-duration: 2s; */
-  cursor: pointer;
 }
 
 #main {
@@ -141,14 +136,6 @@ a:hover {
   float: left;
   margin: auto 2em auto 2em;
   border: solid 3pt black;
-  transition-duration: 1s;
-}
-
-#sidebar:hover {
-  border: solid 4pt lightyellow;
-  transition-duration: 1s;
-  transition-timing-function: ease;
-  width: 18%;
 }
 
 #center {
@@ -162,15 +149,14 @@ a:hover {
   overflow: scroll;
 }
 
-#center:hover {
-  border: solid 4pt lightyellow;
-  transition-duration: 1s;
-  transition-timing-function: ease;
-}
-
 #sidebar-topdiv {
   margin: 1em;
   margin-bottom: 1em;
+}
+
+#sidebar-bottomdiv {
+  display: flex;
+  flex-direction: column;
 }
 
 #userProfilePicture {
@@ -206,6 +192,7 @@ a:hover {
   transition-duration: 2s;
   transition-timing-function: ease;
   box-shadow: 2px 2px black;
+  text-decoration: none;
 }
 
 #sidebar-btn:hover {
@@ -227,7 +214,7 @@ a:hover {
   font-weight: bold;
   padding: 1em;
   border: solid 2pt black;
-  cursor: pointer;
+  /* cursor: pointer; */
   font-weight: bold;
   transition-duration: 2s;
   transition-timing-function: ease;
@@ -840,6 +827,12 @@ tr {
 
 .admin-table tr:nth-child(2) {
   background: #fff;
+}
+
+.user-amount {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
 }
 
 .arrow{

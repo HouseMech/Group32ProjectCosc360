@@ -4,8 +4,8 @@
   <?php include '../layouts/header.php';?>
 
 
-  <?php include '../layouts/sidebar.php';?>
   <div class="main-content">
+    <?php include '../layouts/sidebar.php';?>
     <div id="center">
       <?php
         include_once "commonFunctions.php";
@@ -21,7 +21,7 @@
         $stmt->execute();
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
-        
+
         // If no post.
         if(is_null($row)){
             exit("No posts for that pid.");
@@ -66,13 +66,13 @@
         echo "<tr>";
         echo "<td>";
         if (empty($topic)){ echo "<h3 id='post-item'>" . 'None' . "</u></h3>"; }
-        else { 
+        else {
           // Search for post with similar topics.
           echo "<form method='GET' action='php/search.php'>";
           echo "<input id='post-item' name='search' type='submit' value=" . $topic . "></input>";
           echo "</form>";
         }
-        
+
         // View user profile.
         echo "</td>";
         echo "<td>";
@@ -126,7 +126,7 @@
               echo "<tr>";
               echo "<td id='commentContent'>" . $commentContent . "</td>";
               echo "</tr>";
-              
+
               if ($cUserName == $username){
                 echo "<tr>";
                 echo "<td>";
@@ -140,7 +140,7 @@
               echo "</div>";
             }
           }
-          
+
           // If user is signed in, than display method buttons (comment, delete post, etc).
           if ($username != 'NULL'){
             echo "</div>";

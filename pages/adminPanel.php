@@ -16,7 +16,14 @@
         startSession();
       ?>
       <?php if (isAdmin()): ?>
+        <?php
+          $conn = createConnection();
+          $stmt = "SELECT * FROM blogUser;";
+          $results = mysqli_query($conn, $stmt);
+          $row_cnt = $results->num_rows;
+        ?>
           <h2 id="subHead">Admin panel</h2>
+          <div class="user-amount">Number of users: <?php echo $row_cnt;?></div>
           <table class="admin-table">
             <tr>
               <th>userName</th>
@@ -26,9 +33,6 @@
               <th>Admin</th>
             </tr>
           <?php
-            $conn = createConnection();
-            $stmt = "SELECT * FROM blogUser;";
-            $results = mysqli_query($conn, $stmt);
             while ($row = mysqli_fetch_assoc($results))
             {
               echo "<tr>";
@@ -39,6 +43,7 @@
               echo "<td>".$row['isAdmin']."</td>";
               echo "</tr>";
             }
+            $conn->close();
           ?>
         </table>
 
