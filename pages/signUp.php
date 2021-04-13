@@ -20,7 +20,7 @@ session_start();
     <div id="center">
       <h2 id='subHead'>Sign Up:</h2>
       <div class="signup-container">
-        <form class="signup-form" action="" >
+        <form enctype="multipart/form-data" class="signup-form" action="../php/signUp.php" method="post" >
           <fieldset>
             <p><label for="userName">UserName:</label></p>
             <p><input type="text" name="userName" id="userName" maxlength="15" /></p>
@@ -39,6 +39,9 @@ session_start();
 
             <p><label for="confirmPassword">Confirm Password:</label></p>
             <p><input type="password" name="confirmPassword" id="confirmPassword" maxlength="15" /></p>
+
+            <label for="pImg">(Optional) Upload a profile picture <i>(.jpg, .jpeg, or .png): </i></label>
+            <p><input type="file" id="pImg" name="profilePic" accept="image/*"/></p>
 
             <p><input type="submit" value="Sign Up" id="signUp-btn"/></p>
             <h3 id="message"></h3>
