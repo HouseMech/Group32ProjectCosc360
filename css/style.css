@@ -585,7 +585,6 @@ i {
   text-align: center;
   border-radius: 2em;
   background-color: rgb(68, 21, 2);
-  position: relative;
   margin: 1em auto;
   width: 80%;
   padding: 1em;
@@ -602,7 +601,6 @@ i {
   text-align: center;
   border-radius: 2em;
   background-color: rgb(68, 21, 2);
-  position: relative;
   margin: 1em auto;
   width: 80%;
   padding: 1em;
@@ -615,6 +613,8 @@ i {
 
 #comment-div {
   border-radius: 1em;
+  display: flex;
+  justify-content: center;
 }
 
 #comment-table
