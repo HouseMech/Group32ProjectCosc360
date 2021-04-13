@@ -161,6 +161,11 @@ a:hover {
   margin-bottom: 1em;
 }
 
+#sidebar-bottomdiv {
+  display: flex;
+  flex-direction: column;
+}
+
 #userProfilePicture {
   width: 85%;
   height: 85%;
@@ -194,6 +199,7 @@ a:hover {
   transition-duration: 2s;
   transition-timing-function: ease;
   box-shadow: 2px 2px black;
+  text-decoration: none;
 }
 
 #sidebar-btn:hover {
@@ -215,7 +221,7 @@ a:hover {
   font-weight: bold;
   padding: 1em;
   border: solid 2pt black;
-  cursor: pointer;
+  /* cursor: pointer; */
   font-weight: bold;
   transition-duration: 2s;
   transition-timing-function: ease;
