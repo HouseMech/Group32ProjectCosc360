@@ -136,7 +136,6 @@ a:hover {
   float: left;
   margin: auto 2em auto 2em;
   border: solid 3pt black;
-  transition-duration: 1s;
 }
 
 #center {
@@ -148,12 +147,6 @@ a:hover {
   transition-duration: 2s;
   transition-timing-function: linear;
   overflow: scroll;
-}
-
-#center:hover {
-  border: solid 4pt lightyellow;
-  transition-duration: 1s;
-  transition-timing-function: ease;
 }
 
 #sidebar-topdiv {
