@@ -6,7 +6,7 @@ $(document).ready(function() {
     var fName = $("#fName");
     var lName = $("#lName");
     var email = $("#email");
-    var submit = $("#signUp-btn");
+    var button = $("#signUp-btn");
 
     var elements = [userName, password, fName, lName, email, confirmPassword];
     // remove red highlighting once input changed
@@ -17,28 +17,34 @@ $(document).ready(function() {
             }
         })
     });
-    // when attempting submit makes sure data is valid then sends async request to php to attempt to sign user up
-    submit.on('click', function(e){
-        e.preventDefault();
+    // when attempting to submit form program will check if valid input and if password and email are not used
+    // if conditions are met the form will be submitted
+    button.on('click', function(e){
         if(valid()){
             $.ajax({
                 type: "post",
-                url:  "../php/signUp.php",
-                data: {userName: userName.val(), password: password.val(), fName: fName.val(), lName: lName.val(), email: email.val()}
+                url:  "../php/validEmailAndPassword.php",
+                data: {userName: userName.val(), password: password.val(), fName: fName.val(), lName: lName.val(), email: email.val()},
+                aysnc:false
             }).done(function(data){
-                if(data == "success"){
-                    // submit form which will redirect to index.phps
-                    // will only work on local machine
-                    window.location.replace("http://localhost/Group32ProjectCosc360/index.php");
-                  }
-                //returns message if not sucessful
-                $("#message").html(data);
+                if(data === "success"){
+                    $(".signup-form").submit();
+                }
+                //returns message 
+                $("#message").text(data);
+                
             }).fail(function(jqXHR) {
                 // if ajax request fails, display error
-                console.log("Error: " + jqXHR.status);});
+                console.log("Error: " + jqXHR.status);
+            });
+            e.preventDefault();
         }
+        e.preventDefault();
     });
 
+
+    // makes async request to ensure email and username are not in the database
+    
     // make sure fields are not empty highlights them red if they are
     function valid(){
         var valid = true;
@@ -47,7 +53,7 @@ $(document).ready(function() {
             if(!elements[i].val()){
                 elements[i].addClass("error");
                 valid = false;
-                $("#message").html("All fields must be filled!");
+                $("#message").text("All fields must be filled!");
             }
         }
         // make sure passwods match
