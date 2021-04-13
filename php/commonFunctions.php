@@ -25,4 +25,23 @@ function isLoggedIn(){
     }
     return false;
 }
+
+// checks if the current user is an administrator
+function isAdmin() {
+  if (isLoggedIn()) {
+    $conn = createConnection();
+    $username = $_SESSION['username'];
+    $result = $conn->query("SELECT isAdmin From blogUser WHERE userName='$username'");
+    $row = $result->fetch_assoc();
+    if ($row['isAdmin'] == true) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  else {
+    return false;
+  }
+}
 ?>
