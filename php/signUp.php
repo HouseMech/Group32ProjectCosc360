@@ -24,29 +24,9 @@ $hash = password_hash($password,
 
 // create connection
 $conn = createConnection();
-// check if anyone has same email reject request
-$stmt = $conn->prepare("SELECT email FROM blogUser WHERE email = ?");
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
-// if null that means no other users have the same email
-if(!is_null($result->fetch_assoc())){
-    $conn->close();
-    exit("Email is already taken");
-}
-$stmt->close();
-$stmt = $conn->prepare("SELECT userName FROM blogUser WHERE userName = ?");
-$stmt->bind_param("s", $userName);
-$stmt->execute();
-$result = $stmt->get_result();
-// if not null someone already has username
-if(!is_null($result->fetch_assoc())){
-    $conn->close();
-    exit("userName is taken");
-}
-$stmt->close();
+// email and username are already validated by validEmailAndPassword.php so no need to check if they are valid
 $stmt = $conn->prepare("INSERT INTO blogUser (userName, password, firstName, lastName, email ) VALUES(?, ?, ?, ?, ?)");
-$stmt->bind_param("sssss", $userName, $hash , $fName, $lName, $email,);
+$stmt->bind_param("sssss", $userName, $hash , $fName, $lName, $email);
 if($stmt->execute()){
     $_SESSION["login"] = true;
     $_SESSION["email"] = $email;
@@ -54,6 +34,8 @@ if($stmt->execute()){
     // Determine username for user and store as session['username']. Helpful for other pages.
     $stmt->close();
     $conn->close();
+    include_once "setUserimage.php";
+
     exit("success");
 }else{
     $conn->close();
