@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
+  <script type = "text/javascript" src="./js/getPost.js"></script>
   <body>
   <?php include_once '../layouts/header.php';?>
   <?php include_once "commonFunctions.php"; ?>
@@ -39,7 +40,10 @@
 
             // Display post title.
             echo "<div id='blogPost'>";
-            echo "<h2>" . $postTitle . "</h2>";
+            echo "<h2>" . $postTitle . "<img class='arrow' src='./img/pageImgs/up_arrow.png' height=25 width=25></h2>";
+
+            // div needed for collapsible post
+            echo "<div class='slide'>";
 
             // Display post time.
             echo "<p id='time-log'>" . $time . "</p>";
@@ -83,7 +87,7 @@
             echo "<button id='btn-view' type='submit' formmethod='post'>View Post</button>";
             echo "</form>";
             echo "</div>";
-
+            echo "</div>";
             echo "</div>";
           }
         }
@@ -115,7 +119,11 @@
 
             // Display post title.
             echo "<div id='blogPost'>";
-            echo "<h2>" . $postTitle . "</h2>";
+            echo "<h2>" . $postTitle . "<img class='arrow' src='./img/pageImgs/up_arrow.png' height=25 width=25></h2>";
+
+    
+            // div needed for collapsible post
+            echo "<div class='slide'>";
 
             // Display post time.
             echo "<p id='time-log'>" . $time . "</p>";
@@ -159,7 +167,7 @@
             echo "<button id='btn-view' type='submit' formmethod='post'>View Post</button>";
             echo "</form>";
             echo "</div>";
-            
+            echo "</div>";
             echo "</div>";
           }
         }
