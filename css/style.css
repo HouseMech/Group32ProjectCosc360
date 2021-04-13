@@ -829,6 +829,12 @@ tr {
   background: #fff;
 }
 
+.user-amount {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+
 .arrow{
   position:absolute;
   right: 5em;
