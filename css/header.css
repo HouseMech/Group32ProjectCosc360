@@ -13,6 +13,9 @@
 .header-title {
   padding:5px;
 }
+.header-title-link {
+  text-decoration: none;
+}
 .header-options {
   padding:5px;
   display: flex;
