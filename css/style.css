@@ -118,11 +118,6 @@ a:visited {
 
 a:hover {
   background-color: rgb(170, 172, 174);
-  /* border-radius: 2em; */
-  /* padding: 0.5em;
-  margin: 1em; */
-  /* transition-duration: 2s; */
-  cursor: pointer;
 }
 
 #main {
@@ -142,13 +137,6 @@ a:hover {
   margin: auto 2em auto 2em;
   border: solid 3pt black;
   transition-duration: 1s;
-}
-
-#sidebar:hover {
-  border: solid 4pt lightyellow;
-  transition-duration: 1s;
-  transition-timing-function: ease;
-  width: 18%;
 }
 
 #center {
