@@ -32,6 +32,7 @@
               <th>Email:</th>
               <th>Status:</th>
               <th>View Profile:</th>
+              <th>View Posts:</th>
               <th>Delete Account:</th>
             </tr>
           <?php
@@ -46,7 +47,8 @@
                 echo "<td>Admin</td>";
               } else { echo "<td>Client</td>"; }
               echo "<td>". "<a href='php/viewProfile.php?user=". $row['userName'] .  "'>View</a>";
-              echo "<td>". "<a href='./php/adminDeleteAccount.php?username=". $row['userName'] . '&adminUser=' . $_SESSION['username'] .  "'>❌</a>";
+              echo "<td>". "<a href='./php/adminViewPost.php?username=". $row['userName'] . '&adminUser=' . $_SESSION['username'] .  "'>View</a>";
+              echo "<td>". "<a href='php/adminDeleteAccount.php?username=". $row['userName'] . '&adminUser=' . $_SESSION['username'] .  "'>❌</a>";
               echo "</tr>";
             }
             $conn->close();

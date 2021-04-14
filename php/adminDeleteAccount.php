@@ -74,8 +74,6 @@
     $stmt->close();
     $conn->close();
 
-    header("Refresh:0; url=../pages/adminPanel.php");
-
     $message = $username . "'s account has been deleted.";
     echo "<script type='text/javascript'>alert('$message');</script>";
     header("Refresh:0; url=../pages/adminPanel.php");
