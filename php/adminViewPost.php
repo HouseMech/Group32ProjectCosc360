@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
+  <script type = "text/javascript" src="./js/adminPanel.js"></script>
   <?php include_once "../php/commonFunctions.php"; ?>
 
   <body>
@@ -39,6 +40,7 @@
           
         ?>
           <h2 id="subHead">Admin panel</h2>
+          <textarea id="search">Search</textarea>
           <div class="user-amount">Viewing all post for user: <?php echo $username;?></div>
           
           <table class="admin-table">

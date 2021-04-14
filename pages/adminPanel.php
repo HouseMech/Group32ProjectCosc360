@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php include '../layouts/global_head_include.php';?>
+  <script type = "text/javascript" src="./js/adminPanel.js"></script>
   <?php include_once "../php/commonFunctions.php"; ?>
 
   <body>
@@ -22,6 +23,7 @@
           $row_cnt = $results->num_rows;
         ?>
           <h2 id="subHead">Admin panel</h2>
+          <textarea id="search">Search</textarea>
           <div class="user-amount">Total Number of users: <?php echo $row_cnt;?></div>
 
           <table class="admin-table">
