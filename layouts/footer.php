@@ -1,5 +1,5 @@
 <footer id="mastfoot">
-  <a href="#">FAQ Page</a>
-  | <a href="#">Home</a>
-  | <a href="#">Contact Us</a>
+  <a href="pages/faq.php">FAQ Page</a>
+  | <a href="index.php">Home</a>
+  | <a href="pages/contact.php">Contact Us</a>
 </footer>
