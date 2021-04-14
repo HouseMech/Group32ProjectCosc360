@@ -23,7 +23,7 @@
           $row_cnt = $results->num_rows;
         ?>
           <h2 id="subHead">Admin panel</h2>
-          <textarea id="search">Search</textarea>
+          <textarea id="search" placeholder="Search User"></textarea>
           <div class="user-amount">Total Number of users: <?php echo $row_cnt;?></div>
 
           <table class="admin-table">

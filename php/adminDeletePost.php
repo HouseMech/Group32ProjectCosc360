@@ -7,6 +7,7 @@
 
   $pid = $_GET['pid'];
   $adminUser = $_GET['adminUser'];
+  $username = $_GET['username'];
 
   // Create connection.
   $conn = createConnection();
@@ -32,11 +33,9 @@
     $stmt->close();
     $conn->close();
 
-    header("Refresh:0; url=/adminViewPost.php");
-
     $message = 'Post has been deleted.';
     echo "<script type='text/javascript'>alert('$message');</script>";
-    header("Refresh:0; url=../php/adminViewPost.php?username=". $row['userName'] . '&adminUser=' . $_SESSION['username']);
+    header("Refresh:0; url=../php/adminViewPost.php?username=". $username . '&adminUser=' . $adminUser);
     exit('');
   } else {
     exit("You must be an admin to access this page.");

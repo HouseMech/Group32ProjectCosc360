@@ -40,7 +40,7 @@
           
         ?>
           <h2 id="subHead">Admin panel</h2>
-          <textarea id="search">Search</textarea>
+          <textarea id="search" placeholder="Search Post"></textarea>
           <div class="user-amount">Viewing all post for user: <?php echo $username;?></div>
           
           <table class="admin-table">
@@ -68,7 +68,7 @@
               if ($row['allowComment'] == 1){
                 echo "<td>On</td>";
               } else { echo "<td>Off</td>"; }
-              echo "<td>". "<a href='php/adminDeletePost.php?pid=". $row['pid'] . '&adminUser=' . $adminUser . "'>❌</a>";
+              echo "<td>". "<a href='php/adminDeletePost.php?pid=". $row['pid'] . '&adminUser=' . $adminUser . "&username=" . $username . "'>❌</a>";
               echo "</tr>";
             }
             $conn->close();
