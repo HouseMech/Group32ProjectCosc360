@@ -17,15 +17,15 @@ if(is_null($row)){
     $stmt->close();
     //generate a new password from 10000-99999
     $newPass = rand(10000, 99999);
-    $hash = password_hash($newPass,  
-          PASSWORD_DEFAULT); 
+    $hash = password_hash($newPass,
+          PASSWORD_DEFAULT);
     // putting hash into sql statement because user does not effect output
     //update blogUser set bloguser.password = 123456 where email = 'rileyclark14@icloud.com'
-    $stmt = $conn->prepare("UPDATE bloguser SET bloguser.password = ? WHERE email = ?");
+    $stmt = $conn->prepare("UPDATE blogUser SET blogUser.password = ? WHERE email = ?");
     $stmt->bind_param("ss", $hash ,$email);
     $stmt->execute();
     $conn -> close();
-    // set up email 
+    // set up email
     $to = $email;
     $subject = "My Blog Post password reset";
     $message = "your password has been changed to $newPass";
