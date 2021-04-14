@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <title>MyBlogPost</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
