@@ -604,9 +604,7 @@ i {
   justify-content: center;
 }
 
-#comment-table
-td
-tr {
+#comment-table td tr {
   padding: 1em;
   margin: 0 auto;
   width: 100%;
@@ -813,7 +811,6 @@ tr {
   font-weight: bold;
 }
 
-
 /* Admin Styling */
 .admin-table {
   display: flex;
@@ -835,7 +832,75 @@ tr {
   background-color: #fff;
 }
 
-.arrow{
-  position:absolute;
+.arrow {
+  position: absolute;
   right: 5em;
+}
+
+/* FAQ Page Styling: */
+#pbody {
+  text-align: center;
+  width: 85%;
+  margin: auto;
+  font-size: 1.5em;
+}
+
+#tBody {
+  text-align: center;
+  width: 85%;
+  margin: 1em auto;
+  background-color: rgb(18, 29, 42);
+  color: white;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+#ppBody {
+  text-align: center;
+  width: 95%;
+  margin: 1em auto;
+  background-color: rgb(48, 50, 53);
+  color: white;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+#ppBody a {
+  color: rgb(171, 243, 171);
+  font-weight: bold;
+  border-radius: 1em;
+  margin: auto;
+}
+
+/* Contact Page Styling: */
+#cBody {
+  text-align: center;
+  width: 85%;
+  margin: 1em auto;
+  font-size: 1.2em;
+  background-color: rgb(18, 29, 42);
+  color: white;
+  padding: 1em;
+  border-radius: 1em;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+}
+
+#cBody h3 {
+  color: lightcoral;
+  font-weight: bold;
+}
+
+#cBody a {
+  color: rgb(171, 243, 171);
+  font-weight: bold;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+#cBody:hover {
+  width: 95%;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+  border: solid 2pt white;
 }
