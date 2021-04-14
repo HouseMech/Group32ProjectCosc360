@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <?php include '../layouts/global_head_include.php';?>
   <?php include_once "../php/commonFunctions.php"; ?>
 
@@ -23,14 +22,16 @@
           $row_cnt = $results->num_rows;
         ?>
           <h2 id="subHead">Admin panel</h2>
-          <div class="user-amount">Number of users: <?php echo $row_cnt;?></div>
+          <div class="user-amount">Total Number of users: <?php echo $row_cnt;?></div>
+
           <table class="admin-table">
             <tr>
-              <th>userName</th>
-              <th>firstName</th>
-              <th>lastName</th>
-              <th>email</th>
-              <th>Admin</th>
+              <th>Username:</th>
+              <th>First Name:</th>
+              <th>Last Name:</th>
+              <th>Email:</th>
+              <th>Status:</th>
+              <th>Action:</th>
             </tr>
           <?php
             while ($row = mysqli_fetch_assoc($results))
@@ -40,7 +41,10 @@
               echo "<td>".$row['firstName']."</td>";
               echo "<td>".$row['lastName']."</td>";
               echo "<td>".$row['email']."</td>";
-              echo "<td>".$row['isAdmin']."</td>";
+              if ($row['isAdmin'] == 1){
+                echo "<td>Admin</td>";
+              } else { echo "<td>Client</td>"; }
+              echo "<td>". "<a href='./php/adminDeleteAccount.php?username=". $row['userName'] . '&adminUser=' . $_SESSION['username'] .  "'>Delete</a>";
               echo "</tr>";
             }
             $conn->close();
