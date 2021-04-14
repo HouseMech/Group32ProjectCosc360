@@ -31,7 +31,8 @@
               <th>Last Name:</th>
               <th>Email:</th>
               <th>Status:</th>
-              <th>Action:</th>
+              <th>View Profile:</th>
+              <th>Delete Account:</th>
             </tr>
           <?php
             while ($row = mysqli_fetch_assoc($results))
@@ -44,7 +45,8 @@
               if ($row['isAdmin'] == 1){
                 echo "<td>Admin</td>";
               } else { echo "<td>Client</td>"; }
-              echo "<td>". "<a href='./php/adminDeleteAccount.php?username=". $row['userName'] . '&adminUser=' . $_SESSION['username'] .  "'>Delete</a>";
+              echo "<td>". "<a href='php/viewProfile.php?user=". $row['userName'] .  "'>View</a>";
+              echo "<td>". "<a href='./php/adminDeleteAccount.php?username=". $row['userName'] . '&adminUser=' . $_SESSION['username'] .  "'>❌</a>";
               echo "</tr>";
             }
             $conn->close();
