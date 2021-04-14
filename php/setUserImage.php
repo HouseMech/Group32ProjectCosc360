@@ -42,6 +42,7 @@ if (count($_FILES) > 0 && is_uploaded_file($_FILES['profilePic']['tmp_name'])
     echo "There was a problem moving the file.";
   }       
 }else{
-  exit("No, file present");
+  echo "No, file present";
+  header("Location:http://localhost/Group32ProjectCosc360/pages/accountSettings.php");
 }
 ?>

@@ -43,7 +43,7 @@
         </form>
         <form enctype="multipart/form-data" id="imageForm" method="post" action="./php/setUserImage.php">
           <label for="pImg">Upload new profile picture <i>(.jpg)</i>:</label>
-          <p><input type="file" id="pImg" name="profilePic" accept="image/jpeg"/></p>
+          <p><input type="file" id="pImg" name="profilePic" accept="image/*"/></p>
           <p><input type="submit" value="Upload" id="uploadBtn"/></p>
         </form>
 
