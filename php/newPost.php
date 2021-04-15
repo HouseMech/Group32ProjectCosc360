@@ -1,4 +1,13 @@
 <?php
+
+  // Function used to generate random (unique) filenames.
+  function random_string($length) {
+    $key = '';
+    $keys = array_merge(range(0, 9), range('a', 'z'));
+    for ($i = 0; $i < $length; $i++) { $key .= $keys[array_rand($keys)]; }
+    return $key;
+  }
+
   include_once "commonFunctions.php";
   startSession();
   $username = $_SESSION["username"];
@@ -12,24 +21,17 @@
   if (count($_FILES) > 0 && is_uploaded_file($_FILES['pImg']['tmp_name']) && (strpos($_FILES['pImg']['name'], ".jpg") || strpos($_FILES['pImg']['name'], ".JPG") || strpos($_FILES['pImg']['name'], ".png") || strpos($_FILES['pImg']['name'], ".jpeg" ))) {
     $conn = createConnection();
     ## only commit after file has been successfully downloaded.
-    // assign destintion and determine file name for image path. (image name will be the pid it belongs to)
-    mysqli_autocommit($conn, false);  
-    $stmt = $conn->prepare("SELECT MAX(pid) as 'max' FROM post");
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
-    if ($row['max'] == NULL){
-      $filename = '1';
-    } else {
-      $filename = $row['max'] + 1;
-    }
-
+    // assign a unique filename, that is unique for each post.
+    $randF = random_string(12);
     if(strpos($_FILES['pImg']['name'], ".jpg") || strpos($_FILES['pImg']['name'], ".JPG")){
-      $destination = "./img/pImg/".$filename.".jpg";
+      $filename = $randF.".jpg";
+      $destination = "./img/pImg/".$filename;
     }elseif(strpos($_FILES['pImg']['name'], ".png")){
-      $destination = "./img/pImg/".$filename.".png";
+      $filename = $randF.".png";
+      $destination = "./img/pImg/".$filename;
     }else{
-      $destination = "./img/pImg/".$filename.".jpeg";
+      $filename = $randF.".jpeg";
+      $destination = "./img/pImg/".$filename;
     }
 
     echo $destination;
@@ -60,7 +62,7 @@
   $curTime = date("Y-m-d H:i:s");
   $stmt = $conn->prepare("INSERT INTO post (pid, pUserName, description, time, imagePath, likes, postName, topic, allowComment) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
   $likes = 0;
-  $stmt->bind_param("sssssssss", $pid, $_SESSION['username'], $desc, $curTime, $destination, $likes, $title, $tags, $allowComments);
+  $stmt->bind_param("sssssssss", $pid, $_SESSION['username'], $desc, $curTime, $filename, $likes, $title, $tags, $allowComments);
   if($stmt->execute()){
     $stmt->close();
     $conn->close();
