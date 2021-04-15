@@ -1,28 +1,51 @@
 <?php
+
+  // Function used to generate random (unique) filenames.
+  function random_string($length) {
+    $key = '';
+    $keys = array_merge(range(0, 9), range('a', 'z'));
+    for ($i = 0; $i < $length; $i++) { $key .= $keys[array_rand($keys)]; }
+    return $key;
+  }
+
   include_once "commonFunctions.php";
   startSession();
+  $username = $_SESSION["username"];
+
   // Get form info. 
   $title = $_POST['pTitle']; // required
   $desc = $_POST['pDesc']; // required
   $tags = $_POST['pTags']; // optional
 
-  global $tempname;
-  global $image;
-
-  // Prepare/save image for upload to db storage (BLOB, etc).
-  $filename = $_FILES['pImg']['name'];
-  if (empty($_FILES['pImg']['tmp_name']) != true){
-    $image = base64_encode(file_get_contents(addslashes($_FILES['pImg']['tmp_name'])));
-
-     // Update the image to be saved as the pid.jpg
+  // check if there is a file array, the file was uploaded through post and the name contains .jpg, JPG, png, or jpeg
+  if (count($_FILES) > 0 && is_uploaded_file($_FILES['pImg']['tmp_name']) && (strpos($_FILES['pImg']['name'], ".jpg") || strpos($_FILES['pImg']['name'], ".JPG") || strpos($_FILES['pImg']['name'], ".png") || strpos($_FILES['pImg']['name'], ".jpeg" ))) {
     $conn = createConnection();
-    $sql = "SELECT MAX(pid) FROM post";
-    // Get pid for this post, increment by one because it hasn't been added into db yet.
-    if ($row = $conn -> query($sql)) {$pid = $row -> fetch_row()[0] + 1;}
-    $tempname = $pid . '.jpg';
-  } else {
-    $image = NULL;
-    $tempname = NULL;
+    ## only commit after file has been successfully downloaded.
+    // assign a unique filename, that is unique for each post.
+    $randF = random_string(12);
+    if(strpos($_FILES['pImg']['name'], ".jpg") || strpos($_FILES['pImg']['name'], ".JPG")){
+      $filename = $randF.".jpg";
+      $destination = "./img/pImg/".$filename;
+    }elseif(strpos($_FILES['pImg']['name'], ".png")){
+      $filename = $randF.".png";
+      $destination = "./img/pImg/".$filename;
+    }else{
+      $filename = $randF.".jpeg";
+      $destination = "./img/pImg/".$filename;
+    }
+
+    echo $destination;
+    $destination = ".".$destination;
+    $fileToMove = $_FILES['pImg']['tmp_name'];
+    if (move_uploaded_file($fileToMove,$destination)) {
+      mysqli_commit($conn);
+      $conn->close();
+      header("Location: ../php/viewProfile.php?user=" . $_SESSION['username']);
+    }
+    else {
+      $conn->close();
+      echo "There was a problem moving the file.";
+    }       
   }
 
   // Determine if commenting is turned on/off. 
@@ -39,7 +62,7 @@
   $curTime = date("Y-m-d H:i:s");
   $stmt = $conn->prepare("INSERT INTO post (pid, pUserName, description, time, imagePath, likes, postName, topic, allowComment) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
   $likes = 0;
-  $stmt->bind_param("sssssssss", $pid, $_SESSION['username'], $desc, $curTime, $tempname, $likes, $title, $tags, $allowComments);
+  $stmt->bind_param("sssssssss", $pid, $_SESSION['username'], $desc, $curTime, $filename, $likes, $title, $tags, $allowComments);
   if($stmt->execute()){
     $stmt->close();
     $conn->close();
